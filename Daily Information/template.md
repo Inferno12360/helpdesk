@@ -2,7 +2,8 @@
 * [ ] 
 
 
-### Beteiligung
+### Beteiligung an Aufgaben 
+##### Berechnung (Fokus auf eine Aufgabe / Anzahl der Aufgaben + ...)
 
 1. MS
 2. LK
