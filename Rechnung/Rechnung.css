@@ -1,0 +1,46 @@
+.Placeholder {
+    margin: 0 auto;
+    width: auto;
+    padding: 20px;
+}
+
+.Placeholder-Row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Placeholder-Item {
+    border: 2.5px outset black;
+    background-color: lightblue;
+    text-align: center;
+    margin: 2.5px;
+    padding: 10px;
+}
+
+.Grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 700px;
+    overflow: auto;
+    justify-content: space-between;
+}
+
+.item-1 {
+    background-color: lightgreen;
+    border-color: green;
+    flex: 0;
+    width: auto;
+    flex-direction: row;
+    display: flex;
+}
+
+.item-2 {
+    background-color: lightcoral;
+    border-color: darkred;
+    flex: 1;
+}
+
+.Grid:nth-child(1){
+    background-color: black;
+}
+
