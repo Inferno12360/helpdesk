@@ -28,11 +28,18 @@
       </nav>
       
       <div class="Ticket">
-        <input type="text" id="TicketNr" placeholder="TicketNr">
-        <input type="text" id="Kunde" placeholder="Kunde">
-        <input type="datetime" id="Erstelldatum" placeholder="Erstelldatum">
-        <input type="datetime" id="Bearbeitungsdatum" placeholder="Bearbeitungsdatum">
-        <select name="Status" id="Status">
+
+
+        <div class="grid-Titel">
+            <input type="text" id="TicketNr" placeholder="TicketNr" readonly>
+            <input type="text" id="Titel" placeholder="Titel">
+        </div>
+
+        <div class="grid-Dropdown">
+          <p>Status:</p>
+          <p>Priorität:</p>
+          <p>Art:</p>
+          <select name="Status" id="Status">
             <option value="placeholder">- Choose Option -</option>
             <option value="Open">Open</option>
             <option value="In Progress">In Progress</option>
@@ -44,9 +51,30 @@
             <option value="Medium">Medium</option>
             <option value="High">High</option>
           </select>
-        <input type="text" id="Bearbeiter" placeholder="Bearbeiter">
+          <select name="Art" id="Art">
+            <option value="placeholder">- Choose Option -</option>
+            <option value="Neuinstallation">Neuinstallation</option>
+            <option value="Reperatur">Reperatur</option>
+            <option value="Standart-Fehler">Standart-Fehler</option>
+          </select>
+        </div>
+
+
+        <br><br>
+        <input type="text" id="Kunde" placeholder="Kunde">
+        <input type="datetime" id="Erstelldatum" placeholder="Erstelldatum">
+        <input type="datetime" id="Bearbeitungsdatum" placeholder="Bearbeitungsdatum">
+        <br><br>
+        
+          <br><br>
+        
         <input type="text" id="Beschreibung" placeholder="Beschreibung">
+        <br>
         <input type="text" id="Interne_Notiz" placeholder="Interne Notiz">
+        <input type="text" id="Interner_Status" placeholder="Interner Status">
+        <input type="text" id="Ersteller" placeholder="Ersteller">
+        <input type="text" id="Bearbeiter" placeholder="Bearbeiter">
+        
       </div>
 
 </body>

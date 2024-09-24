@@ -19,28 +19,133 @@
 
 .Grid{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 700px;
-    overflow: auto;
+    grid-template-columns: 6fr 1fr 1fr;
+    grid-template-rows: 95% 5%;
+    column-width: 1vh;
+    overflow: hidden;
+    height: 800px;
     justify-content: space-between;
+    margin: 2.5px;
+    border: 2.5px outset black;
 }
 
 .item-1 {
     background-color: lightgreen;
-    border-color: green;
     flex: 0;
     width: auto;
     flex-direction: row;
     display: flex;
 }
 
+#Ticketnummer{
+    margin-left: 2.5px;
+}
+
 .item-2 {
     background-color: lightcoral;
-    border-color: darkred;
     flex: 1;
 }
 
-.Grid:nth-child(1){
-    background-color: black;
+.item-3{
+    background-color: rgb(24, 61, 24);
+
+    padding: 7px;
+
+    border-right: 2.5px outset black;
+    border-bottom: 2.5px outset black;
 }
+
+#Dienstleistungen_Beschreibung{
+    width: 1185px;
+}
+
+.item-4{
+    background-color: rgb(47, 23, 155);
+
+    padding: 7px;
+
+    border-right: 2.5px outset black;
+    border-bottom: 2.5px outset black;
+    border-left: 2.5px outset black;
+
+    margin-left: 2.5px;
+}
+
+#Kosten{
+    width: 204px;
+}
+
+#Bezahlungsart{
+    width: 204px;
+    margin-top: 2.5px;
+}
+
+
+.item-5{
+    background-color: rgb(196, 126, 46);
+
+    padding: 7px;
+
+    border-left: 2.5px outset black;
+
+    margin-left: 2.5px;
+    grid-row-end: span 2;
+}
+
+#Notizen{
+    width: 204px;
+}
+
+.item-6{
+    background-color: rgb(146, 13, 31);
+
+    padding: 7px;
+
+    border-top: 2.5px outset black;
+    border-right: 2.5px outset black;
+
+    margin-top: 2.5px;
+
+    height: 50px;
+}
+
+#Save_As_PDF{
+    background-color: black;
+    color:white;
+}
+
+#Print{
+    background-color: black;
+    color:white;
+}
+
+#Send_Via_Email{
+    background-color: black;
+    color:white;
+}
+
+.item-7{
+    background-color: rgb(20, 201, 224);
+
+    padding: 7px;
+
+    border-top: 2.5px outset black;
+    border-right: 2.5px outset black;
+    border-left: 2.5px outset black;
+
+    margin-top: 2.5px;
+    margin-left: 2.5px;
+
+    height: 50px;
+}
+
+#Preis{
+    width: 204px;
+    background: black;
+}
+
+::placeholder{
+    color: white;
+}
+
 
