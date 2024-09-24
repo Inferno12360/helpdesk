@@ -11,8 +11,12 @@
             "id": "f3d136f4d166a0f6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Daily Information/23.09.2024.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -81,6 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Daily Information/23.09.2024.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,6 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Daily Information/23.09.2024.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -130,7 +136,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Daily Information/23.09.2024.md"
+              }
             }
           }
         ]
@@ -152,9 +160,9 @@
   },
   "active": "f3d136f4d166a0f6",
   "lastOpenFiles": [
+    "Daily Information/template.md",
     "Daily Information/23.09.2024.md",
     "Daily Information/18.09.2024.md",
-    "Daily Information/template.md",
     "Daily Information/16.09.2024.md",
     "Daily Information/11.09.2024.md",
     "Was ist falsch an der Datenbank (2024-09-18).md",
