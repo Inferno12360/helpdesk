@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily Information/23.09.2024.md",
+                "file": "Daily Information/07.10.2024.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "b0623d19a7ec797b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Login-Data.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Daily Information/23.09.2024.md",
+                "file": "Login-Data.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Daily Information/23.09.2024.md",
+                "file": "Login-Data.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Daily Information/23.09.2024.md"
+                "file": "Login-Data.md"
               }
             }
           }
@@ -158,8 +171,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f3d136f4d166a0f6",
+  "active": "b0623d19a7ec797b",
   "lastOpenFiles": [
+    "Daily Information/07.10.2024.md",
+    "Login-Data.md",
+    "Untitled",
+    "Daily Information/02.10.2024.md",
+    "ER-Model.pdf",
+    "Daily Information/30.09.2024.md",
     "Daily Information/template.md",
     "Daily Information/23.09.2024.md",
     "Daily Information/18.09.2024.md",
