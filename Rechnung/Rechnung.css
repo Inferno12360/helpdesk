@@ -1,3 +1,4 @@
+/*#region Container*/
 .Placeholder {
     margin: 0 auto;
     width: auto;
@@ -6,146 +7,227 @@
 
 .Placeholder-Row {
     display: flex;
-    justify-content: space-between;
 }
 
 .Placeholder-Item {
-    border: 2.5px outset black;
-    background-color: lightblue;
     text-align: center;
     margin: 2.5px;
-    padding: 10px;
+    padding: 7px;
+    box-sizing: border-box;
+    gap: 5px;
 }
 
-.Grid{
+.Grid {
     display: grid;
     grid-template-columns: 6fr 1fr 1fr;
     grid-template-rows: 95% 5%;
-    column-width: 1vh;
     overflow: hidden;
     height: 800px;
-    justify-content: space-between;
     margin: 2.5px;
-    border: 2.5px outset black;
 }
 
-.item-1 {
-    background-color: lightgreen;
-    flex: 0;
-    width: auto;
-    flex-direction: row;
-    display: flex;
+/*#endregion*/
+
+/*#region Border Animation */
+
+@keyframes borderPulseOut {
+    0% {
+        border-color: #7a7a7a; /* Dark grey */
+    }
+    25% {
+        border-color: #9e9e9e; /* Medium light grey */
+    }
+    50% {
+        border-color: #b3b3b3; /* Light grey */
+    }
+    75% {
+        border-color: #c0c0c0; /* Very light grey */
+    }
+    100% {
+        border-color: #7a7a7a; /* Dark grey */
+    }
 }
 
-#Ticketnummer{
+@keyframes borderPulseIn {
+    0% {
+        border-color: #c4c4c4; /* Lighter grey */
+    }
+    25% {
+        border-color: #d1d1d1; /* Even lighter grey */
+    }
+    50% {
+        border-color: #e0e0e0; /* Lightest grey */
+    }
+    75% {
+        border-color: #e6e6e6; /* Almost white */
+    }
+    100% {
+        border-color: #c4c4c4; /* Lighter grey */
+    }
+}
+
+
+/*#endregion*/
+
+.item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7{
+    animation: borderPulseOut 5s infinite ease-in-out;
+}
+
+.small, .large, .btn, .dienstleistungen, .beschreibung, .kosten, .preis, .bezahlungsart
+{
+    animation: borderPulseIn 5s infinite ease-in-out;
+}
+
+/*#region Items*/
+.item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7 {
+    padding: 7px;
+    border: 2.5px solid darkgray;
+    border-radius: 27px;
+    box-sizing: border-box;
+}
+
+.item-4 {
+    margin-left: 3.5px;
+}
+
+.item-5 {
     margin-left: 2.5px;
 }
 
-.item-2 {
-    background-color: lightcoral;
+.item-6 {
+    margin-top: 2.5px;
+    justify-self: left;
+}
+
+.item-7 {
+    margin-top: 2.5px;
+    margin-left: 2.5px;
+    display: flex;
+    gap: 5px;
+    flex-direction: row;
+}
+
+/*#endregion*/
+
+/*#region Shared Styles*/
+
+.shared-style {
+    background-color:white;
+    color: black;
+    border: none;
+    resize: none;
+    border-radius: 20px;
+}
+
+.small {
+    width: 200px;
+    border: 2.5px solid darkgrey;
+}
+
+.full {
+    width: 100%;
+}
+
+.large {
+    width: calc(100% - 8px);
+    height: 736px;
+    resize: none;
+    border: 2.5px solid darkgrey;
+}
+
+.btn {
+    cursor: pointer;
+    border: 2.5px solid darkgrey;
+}
+
+.btn:hover {
+    background-color: lightgray;
+}
+
+.btn:active {
+    background-color: darkgrey;
+}
+
+.flex-container {
+    display: flex;
+    gap: 5px;
+}
+
+.dienstleistungen {
+    flex: 1;
+    border: 2.5px solid darkgrey;
+}
+
+.beschreibung {
+    flex: 9;
+    border: 2.5px solid darkgrey;
+}
+
+.kosten{
+    height: 736px;
+    width: calc(100% - 8px);
+    border: 2.5px solid darkgrey;
+}
+
+.preis, .bezahlungsart{
+    width: 100px;
+    border: 2.5px solid darkgrey;
     flex: 1;
 }
 
-.item-3{
-    background-color: rgb(24, 61, 24);
+/*#endregion*/
 
-    padding: 7px;
-
-    border-right: 2.5px outset black;
-    border-bottom: 2.5px outset black;
+::placeholder {
+    color: black;
 }
 
-#Dienstleistungen_Beschreibung{
-    width: 1185px;
+input.shared-style{
+    text-align: center;
 }
 
-.item-4{
-    background-color: rgb(47, 23, 155);
-
-    padding: 7px;
-
-    border-right: 2.5px outset black;
-    border-bottom: 2.5px outset black;
-    border-left: 2.5px outset black;
-
-    margin-left: 2.5px;
+input::placeholder{
+    text-align: center;
 }
 
-#Kosten{
-    width: 204px;
+@media print {
+    .btn {
+        display: none; /* Buttons ausblenden */
+    }
+
+    .Grid-Item.item-6 {
+        display: none; /* Auch den Container für die Buttons ausblenden */
+    }
+
+    .Placeholder {
+        display: block;
+        width: 100%; /* Breite anpassen */
+    }
+
+    .Placeholder-Row {
+        display: flex; /* Flexbox für die obere Reihe */
+        flex-direction: column; /* Boxen übereinander anordnen */
+    }
+
+    .Grid {
+        display: grid;
+        grid-template-columns: 6fr 1fr 1fr;
+    }
+
+    .Grid-Item {
+        padding: 5px; /* Padding für Boxen */
+        height: auto; /* Höhe anpassen, um Inhalte zu zeigen */
+    }
+
+    /* Anmerkungen-Box unter den anderen Boxen platzieren */
+    .Grid-Item.item-5 {
+        grid-column: 1 / -1; /* Vollständige Breite einnehmen */
+        margin-top: 10px; /* Optional: Abstand nach oben für bessere Sichtbarkeit */
+    }
+
+    /* Boxen für Dienstleistungen, Beschreibung und Kosten */
+    .Grid-Item.item-3,
+    .Grid-Item.item-4,
+    .Grid-Item.item-7 {
+        height: auto; /* Höhe anpassen, um Inhalte zu zeigen */
+    }
 }
-
-#Bezahlungsart{
-    width: 204px;
-    margin-top: 2.5px;
-}
-
-
-.item-5{
-    background-color: rgb(196, 126, 46);
-
-    padding: 7px;
-
-    border-left: 2.5px outset black;
-
-    margin-left: 2.5px;
-    grid-row-end: span 2;
-}
-
-#Notizen{
-    width: 204px;
-}
-
-.item-6{
-    background-color: rgb(146, 13, 31);
-
-    padding: 7px;
-
-    border-top: 2.5px outset black;
-    border-right: 2.5px outset black;
-
-    margin-top: 2.5px;
-
-    height: 50px;
-}
-
-#Save_As_PDF{
-    background-color: black;
-    color:white;
-}
-
-#Print{
-    background-color: black;
-    color:white;
-}
-
-#Send_Via_Email{
-    background-color: black;
-    color:white;
-}
-
-.item-7{
-    background-color: rgb(20, 201, 224);
-
-    padding: 7px;
-
-    border-top: 2.5px outset black;
-    border-right: 2.5px outset black;
-    border-left: 2.5px outset black;
-
-    margin-top: 2.5px;
-    margin-left: 2.5px;
-
-    height: 50px;
-}
-
-#Preis{
-    width: 204px;
-    background: black;
-}
-
-::placeholder{
-    color: white;
-}
-
-
