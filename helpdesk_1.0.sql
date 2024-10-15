@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 25. Sep 2024 um 09:43
--- Server-Version: 10.4.22-MariaDB
--- PHP-Version: 8.1.2
+-- Erstellungszeit: 07. Okt 2024 um 13:53
+-- Server-Version: 10.4.32-MariaDB
+-- PHP-Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `helpdesk`
 --
+CREATE DATABASE IF NOT EXISTS `helpdesk` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `helpdesk`;
 
 -- --------------------------------------------------------
 
@@ -27,22 +29,23 @@ SET time_zone = "+00:00";
 -- Tabellenstruktur für Tabelle `abgeleitet`
 --
 
+DROP TABLE IF EXISTS `abgeleitet`;
 CREATE TABLE `abgeleitet` (
   `FK_Dienstleistung` int(11) NOT NULL,
   `FK_Ticket` int(11) NOT NULL,
   `Kosten` decimal(10,2) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `abgeleitet`
 --
 
 INSERT INTO `abgeleitet` (`FK_Dienstleistung`, `FK_Ticket`, `Kosten`) VALUES
-(1, 1, '150.50'),
-(2, 2, '300.00'),
-(3, 3, '75.00'),
-(4, 4, '200.00'),
-(5, 5, '500.00');
+(1, 1, 150.50),
+(2, 2, 300.00),
+(3, 3, 75.00),
+(4, 4, 200.00),
+(5, 5, 500.00);
 
 -- --------------------------------------------------------
 
@@ -50,22 +53,23 @@ INSERT INTO `abgeleitet` (`FK_Dienstleistung`, `FK_Ticket`, `Kosten`) VALUES
 -- Tabellenstruktur für Tabelle `art`
 --
 
+DROP TABLE IF EXISTS `art`;
 CREATE TABLE `art` (
+  `PK_Art` int(11) NOT NULL,
   `Artname` varchar(255) DEFAULT NULL,
-  `Beschreibung` text DEFAULT NULL,
-  `PK_Art` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Beschreibung` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `art`
 --
 
-INSERT INTO `art` (`Artname`, `Beschreibung`, `PK_Art`) VALUES
-('Wartung', 'Regelmäßige Wartung', 1),
-('Fehlerbehebung', 'Behebung von Softwarefehlern', 2),
-('Installation', 'Installation neuer Hardware oder Software', 3),
-('Upgrade', 'System-Upgrade', 4),
-('Beratung', 'IT-Beratung', 5);
+INSERT INTO `art` (`PK_Art`, `Artname`, `Beschreibung`) VALUES
+(1, 'Wartung', 'Regelmäßige Wartung'),
+(2, 'Fehlerbehebung', 'Behebung von Softwarefehlern'),
+(3, 'Installation', 'Installation neuer Hardware oder Software'),
+(4, 'Upgrade', 'System-Upgrade'),
+(5, 'Beratung', 'IT-Beratung');
 
 -- --------------------------------------------------------
 
@@ -73,10 +77,11 @@ INSERT INTO `art` (`Artname`, `Beschreibung`, `PK_Art`) VALUES
 -- Tabellenstruktur für Tabelle `bearbeitet`
 --
 
+DROP TABLE IF EXISTS `bearbeitet`;
 CREATE TABLE `bearbeitet` (
   `FK_Mitarbeiter` int(11) NOT NULL,
   `FK_Ticket` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `bearbeitet`
@@ -95,11 +100,12 @@ INSERT INTO `bearbeitet` (`FK_Mitarbeiter`, `FK_Ticket`) VALUES
 -- Tabellenstruktur für Tabelle `bezahlungsart`
 --
 
+DROP TABLE IF EXISTS `bezahlungsart`;
 CREATE TABLE `bezahlungsart` (
   `Artname` varchar(255) DEFAULT NULL,
   `Beschreibung` text DEFAULT NULL,
   `PK_Bezahlungsart` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `bezahlungsart`
@@ -118,23 +124,23 @@ INSERT INTO `bezahlungsart` (`Artname`, `Beschreibung`, `PK_Bezahlungsart`) VALU
 -- Tabellenstruktur für Tabelle `dienstleistung`
 --
 
+DROP TABLE IF EXISTS `dienstleistung`;
 CREATE TABLE `dienstleistung` (
   `PK_Dienstleistung` int(11) NOT NULL,
   `Beschreibung` text DEFAULT NULL,
-  `Kosten` decimal(10,2) DEFAULT NULL,
-  `FK_Kunde` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Kosten` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `dienstleistung`
 --
 
-INSERT INTO `dienstleistung` (`PK_Dienstleistung`, `Beschreibung`, `Kosten`, `FK_Kunde`) VALUES
-(1, 'Serverwartung', '150.50', 1),
-(2, 'Softwareinstallation', '300.00', 2),
-(3, 'Netzwerkinstallation', '75.00', 3),
-(4, 'Hardware-Reparatur', '200.00', 4),
-(5, 'Consulting', '500.00', 5);
+INSERT INTO `dienstleistung` (`PK_Dienstleistung`, `Beschreibung`, `Kosten`) VALUES
+(1, 'Serverwartung', 150.50),
+(2, 'Softwareinstallation', 300.00),
+(3, 'Netzwerkinstallation', 75.00),
+(4, 'Hardware-Reparatur', 200.00),
+(5, 'Consulting', 500.00);
 
 -- --------------------------------------------------------
 
@@ -142,10 +148,11 @@ INSERT INTO `dienstleistung` (`PK_Dienstleistung`, `Beschreibung`, `Kosten`, `FK
 -- Tabellenstruktur für Tabelle `eigene_firma`
 --
 
+DROP TABLE IF EXISTS `eigene_firma`;
 CREATE TABLE `eigene_firma` (
   `PK_EigeneFirma` int(255) NOT NULL,
   `Firmenename` varchar(35) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `eigene_firma`
@@ -164,10 +171,11 @@ INSERT INTO `eigene_firma` (`PK_EigeneFirma`, `Firmenename`) VALUES
 -- Tabellenstruktur für Tabelle `intern_residiert`
 --
 
+DROP TABLE IF EXISTS `intern_residiert`;
 CREATE TABLE `intern_residiert` (
   `FK_Ort` int(11) NOT NULL,
   `FK_EigeneFirma` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `intern_residiert`
@@ -186,48 +194,23 @@ INSERT INTO `intern_residiert` (`FK_Ort`, `FK_EigeneFirma`) VALUES
 -- Tabellenstruktur für Tabelle `kunde`
 --
 
+DROP TABLE IF EXISTS `kunde`;
 CREATE TABLE `kunde` (
-  `Kundennummer` varchar(255) DEFAULT NULL,
-  `Firmenname` varchar(255) DEFAULT NULL,
   `PK_Kunde` int(11) NOT NULL,
-  `FK_Rechnung` int(11) DEFAULT NULL,
-  `FK_Ort` int(11) DEFAULT NULL,
-  `FK_Ticket` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Kundennummer` varchar(255) DEFAULT NULL,
+  `Firmenname` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `kunde`
 --
 
-INSERT INTO `kunde` (`Kundennummer`, `Firmenname`, `PK_Kunde`, `FK_Rechnung`, `FK_Ort`, `FK_Ticket`) VALUES
-('K001', 'Firma Alpha', 1, 1, 1, 1),
-('K002', 'Firma Beta', 2, 2, 2, 2),
-('K003', 'Firma Gamma', 3, 3, 3, 3),
-('K004', 'Firma Delta', 4, 4, 4, 4),
-('K005', 'Firma Epsilon', 5, 5, 5, 5);
-
--- --------------------------------------------------------
-
---
--- Tabellenstruktur für Tabelle `leitet_ab`
---
-
-CREATE TABLE `leitet_ab` (
-  `FK_Rechnung` varchar(255) NOT NULL,
-  `FK_Ticket` int(11) NOT NULL,
-  `Ticketbeschreibung` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Daten für Tabelle `leitet_ab`
---
-
-INSERT INTO `leitet_ab` (`FK_Rechnung`, `FK_Ticket`, `Ticketbeschreibung`) VALUES
-('R001', 1, 'Problem mit Server'),
-('R002', 2, 'Fehler in Software'),
-('R003', 3, 'Installation eines Netzwerks'),
-('R004', 4, 'Hardwaredefekt'),
-('R005', 5, 'Beratung zu IT-Sicherheit');
+INSERT INTO `kunde` (`PK_Kunde`, `Kundennummer`, `Firmenname`) VALUES
+(1, 'K001', 'Firma Alpha'),
+(2, 'K002', 'Firma Beta'),
+(3, 'K003', 'Firma Gamma'),
+(4, 'K004', 'Firma Delta'),
+(5, 'K005', 'Firma Epsilon');
 
 -- --------------------------------------------------------
 
@@ -235,6 +218,7 @@ INSERT INTO `leitet_ab` (`FK_Rechnung`, `FK_Ticket`, `Ticketbeschreibung`) VALUE
 -- Tabellenstruktur für Tabelle `mitarbeiter`
 --
 
+DROP TABLE IF EXISTS `mitarbeiter`;
 CREATE TABLE `mitarbeiter` (
   `PK_Mitarbeiter` int(11) NOT NULL,
   `Vorname` varchar(255) DEFAULT NULL,
@@ -246,7 +230,7 @@ CREATE TABLE `mitarbeiter` (
   `FK_Ort` int(11) DEFAULT NULL,
   `FK_Rechtegruppe` int(11) DEFAULT NULL,
   `FK_EigeneFirma` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `mitarbeiter`
@@ -265,26 +249,25 @@ INSERT INTO `mitarbeiter` (`PK_Mitarbeiter`, `Vorname`, `Nachname`, `Position`, 
 -- Tabellenstruktur für Tabelle `ort`
 --
 
+DROP TABLE IF EXISTS `ort`;
 CREATE TABLE `ort` (
+  `PK_Ort` int(11) NOT NULL,
   `Stadt` varchar(255) DEFAULT NULL,
   `PLZ` varchar(10) DEFAULT NULL,
   `Straße` varchar(255) DEFAULT NULL,
-  `Hausnummer` varchar(10) DEFAULT NULL,
-  `PK_Ort` int(11) NOT NULL,
-  `FK_EigeneFirma` int(11) DEFAULT NULL,
-  `FK_Kunde` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Hausnummer` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `ort`
 --
 
-INSERT INTO `ort` (`Stadt`, `PLZ`, `Straße`, `Hausnummer`, `PK_Ort`, `FK_EigeneFirma`, `FK_Kunde`) VALUES
-('Berlin', '10115', 'Hauptstraße', '10', 1, 1, 1),
-('Hamburg', '20095', 'Nebenstraße', '5', 2, 2, 2),
-('München', '80331', 'Platz', '12', 3, 3, 3),
-('Köln', '50667', 'Ring', '3', 4, 4, 4),
-('Frankfurt', '60313', 'Weg', '8', 5, 5, 5);
+INSERT INTO `ort` (`PK_Ort`, `Stadt`, `PLZ`, `Straße`, `Hausnummer`) VALUES
+(1, 'Berlin', '10115', 'Hauptstraße', '10'),
+(2, 'Hamburg', '20095', 'Nebenstraße', '5'),
+(3, 'München', '80331', 'Platz', '12'),
+(4, 'Köln', '50667', 'Ring', '3'),
+(5, 'Frankfurt', '60313', 'Weg', '8');
 
 -- --------------------------------------------------------
 
@@ -292,11 +275,12 @@ INSERT INTO `ort` (`Stadt`, `PLZ`, `Straße`, `Hausnummer`, `PK_Ort`, `FK_Eigene
 -- Tabellenstruktur für Tabelle `priorität`
 --
 
+DROP TABLE IF EXISTS `priorität`;
 CREATE TABLE `priorität` (
   `Prioritätsname` varchar(255) DEFAULT NULL,
   `Beschreibung` text DEFAULT NULL,
   `PK_Priorität` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `priorität`
@@ -315,26 +299,27 @@ INSERT INTO `priorität` (`Prioritätsname`, `Beschreibung`, `PK_Priorität`) VA
 -- Tabellenstruktur für Tabelle `rechnung`
 --
 
+DROP TABLE IF EXISTS `rechnung`;
 CREATE TABLE `rechnung` (
   `Rechnungsnr` varchar(255) NOT NULL,
+  `Ticketbeschreibung` text DEFAULT NULL,
   `Abrechnung` varchar(255) DEFAULT NULL,
+  `Ratenzahlung` tinyint(1) DEFAULT NULL,
   `FK_Bezahlungsart` int(11) DEFAULT NULL,
   `FK_Kunde` int(11) DEFAULT NULL,
-  `FK_Ticket` int(11) DEFAULT NULL,
-  `Ticketbeschreibung` text DEFAULT NULL,
-  `Ratenzahlung` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `FK_Ticket` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `rechnung`
 --
 
-INSERT INTO `rechnung` (`Rechnungsnr`, `Abrechnung`, `FK_Bezahlungsart`, `FK_Kunde`, `FK_Ticket`, `Ticketbeschreibung`, `Ratenzahlung`) VALUES
-('R001', 'Rechnung für Ticket 1', 1, 1, 1, 'Problem mit Server', 0),
-('R002', 'Rechnung für Ticket 2', 2, 2, 2, 'Fehler in Software', 0),
-('R003', 'Rechnung für Ticket 3', 3, 3, 3, 'Installation eines Netzwerks', 1),
-('R004', 'Rechnung für Ticket 4', 4, 4, 4, 'Hardwaredefekt', 0),
-('R005', 'Rechnung für Ticket 5', 5, 5, 5, 'Beratung zu IT-Sicherheit', 1);
+INSERT INTO `rechnung` (`Rechnungsnr`, `Ticketbeschreibung`, `Abrechnung`, `Ratenzahlung`, `FK_Bezahlungsart`, `FK_Kunde`, `FK_Ticket`) VALUES
+('R001', 'Problem mit Server', 'Rechnung für Ticket 1', 0, 1, 1, 1),
+('R002', 'Fehler in Software', 'Rechnung für Ticket 2', 0, 2, 2, 2),
+('R003', 'Installation eines Netzwerks', 'Rechnung für Ticket 3', 1, 3, 3, 3),
+('R004', 'Hardwaredefekt', 'Rechnung für Ticket 4', 0, 4, 4, 4),
+('R005', 'Beratung zu IT-Sicherheit', 'Rechnung für Ticket 5', 1, 5, 5, 5);
 
 -- --------------------------------------------------------
 
@@ -342,23 +327,24 @@ INSERT INTO `rechnung` (`Rechnungsnr`, `Abrechnung`, `FK_Bezahlungsart`, `FK_Kun
 -- Tabellenstruktur für Tabelle `rechtegruppe`
 --
 
+DROP TABLE IF EXISTS `rechtegruppe`;
 CREATE TABLE `rechtegruppe` (
   `Administrationsrechte` tinyint(1) DEFAULT NULL,
   `Bestelllimit` decimal(10,2) DEFAULT NULL,
   `Helpdesk_Fernwartung` tinyint(1) DEFAULT NULL,
   `PK_Rechtegruppe` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `rechtegruppe`
 --
 
 INSERT INTO `rechtegruppe` (`Administrationsrechte`, `Bestelllimit`, `Helpdesk_Fernwartung`, `PK_Rechtegruppe`) VALUES
-(1, '1000.00', 1, 1),
-(0, '500.00', 0, 2),
-(1, '2000.00', 1, 3),
-(0, '100.00', 0, 4),
-(1, '1500.00', 1, 5);
+(1, 1000.00, 1, 1),
+(0, 500.00, 0, 2),
+(1, 2000.00, 1, 3),
+(0, 100.00, 0, 4),
+(1, 1500.00, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -366,10 +352,11 @@ INSERT INTO `rechtegruppe` (`Administrationsrechte`, `Bestelllimit`, `Helpdesk_F
 -- Tabellenstruktur für Tabelle `residiert`
 --
 
+DROP TABLE IF EXISTS `residiert`;
 CREATE TABLE `residiert` (
   `FK_Kunde` int(11) NOT NULL,
   `FK_Ort` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `residiert`
@@ -388,23 +375,24 @@ INSERT INTO `residiert` (`FK_Kunde`, `FK_Ort`) VALUES
 -- Tabellenstruktur für Tabelle `status`
 --
 
+DROP TABLE IF EXISTS `status`;
 CREATE TABLE `status` (
+  `PK_Status` int(11) NOT NULL,
   `Statusname` varchar(255) DEFAULT NULL,
   `Farbe` varchar(20) DEFAULT NULL,
-  `Beschreibung` text DEFAULT NULL,
-  `PK_Status` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `Beschreibung` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `status`
 --
 
-INSERT INTO `status` (`Statusname`, `Farbe`, `Beschreibung`, `PK_Status`) VALUES
-('Offen', 'Rot', 'Ticket ist offen', 1),
-('In Bearbeitung', 'Gelb', 'Ticket in Bearbeitung', 2),
-('Geschlossen', 'Grün', 'Ticket geschlossen', 3),
-('Wartend', 'Blau', 'Wartet auf Antwort', 4),
-('Archiviert', 'Grau', 'Ticket archiviert', 5);
+INSERT INTO `status` (`PK_Status`, `Statusname`, `Farbe`, `Beschreibung`) VALUES
+(1, 'Offen', 'Rot', 'Ticket ist offen'),
+(2, 'In Bearbeitung', 'Gelb', 'Ticket in Bearbeitung'),
+(3, 'Geschlossen', 'Grün', 'Ticket geschlossen'),
+(4, 'Wartend', 'Blau', 'Wartet auf Antwort'),
+(5, 'Archiviert', 'Grau', 'Ticket archiviert');
 
 -- --------------------------------------------------------
 
@@ -412,6 +400,7 @@ INSERT INTO `status` (`Statusname`, `Farbe`, `Beschreibung`, `PK_Status`) VALUES
 -- Tabellenstruktur für Tabelle `ticket`
 --
 
+DROP TABLE IF EXISTS `ticket`;
 CREATE TABLE `ticket` (
   `PK_Ticket` int(11) NOT NULL,
   `Ticket_Titel` varchar(75) NOT NULL,
@@ -424,20 +413,19 @@ CREATE TABLE `ticket` (
   `FK_Priorität` int(11) DEFAULT NULL,
   `FK_Art` int(11) DEFAULT NULL,
   `FK_Mitarbeiter` int(11) DEFAULT NULL,
-  `FK_Kunde` int(11) DEFAULT NULL,
-  `FK_Rechnung` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `FK_Kunde` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `ticket`
 --
 
-INSERT INTO `ticket` (`PK_Ticket`, `Ticket_Titel`, `Beschreibung`, `Interne_Notiz`, `Interner_Status`, `Erstelldatum`, `Bearbeitungsdatum`, `FK_Status`, `FK_Priorität`, `FK_Art`, `FK_Mitarbeiter`, `FK_Kunde`, `FK_Rechnung`) VALUES
-(1, 'Problem mit Server', 'Server läuft nicht richtig', 'Keine Notiz', 'Offen', '2024-09-01', '2024-09-02', 1, 1, 1, 1, 1, 0),
-(2, 'Fehler in Software', 'Software gibt Fehler aus', 'Dringend', 'In Bearbeitung', '2024-09-02', '2024-09-03', 2, 2, 2, 2, 2, 0),
-(3, 'Netzwerkinstallation', 'Neues Netzwerk muss installiert werden', 'Kabel fehlen', 'Geschlossen', '2024-09-03', '2024-09-04', 3, 3, 3, 3, 3, 0),
-(4, 'Hardwaredefekt', 'Hardwareproblem an PC', 'Ersatzteil bestellt', 'Wartend', '2024-09-04', '2024-09-05', 4, 4, 4, 4, 4, 0),
-(5, 'IT-Sicherheitsberatung', 'Beratung zum Thema Sicherheit', 'Eingeschränkte Verfügbarkeit', 'Archiviert', '2024-09-05', '2024-09-06', 5, 5, 5, 5, 5, 0);
+INSERT INTO `ticket` (`PK_Ticket`, `Ticket_Titel`, `Beschreibung`, `Interne_Notiz`, `Interner_Status`, `Erstelldatum`, `Bearbeitungsdatum`, `FK_Status`, `FK_Priorität`, `FK_Art`, `FK_Mitarbeiter`, `FK_Kunde`) VALUES
+(1, 'Problem mit Server', 'Server läuft nicht richtig', 'Keine Notiz', 'Offen', '2024-09-01', '2024-09-02', 1, 1, 1, 1, 1),
+(2, 'Fehler in Software', 'Software gibt Fehler aus', 'Dringend', 'In Bearbeitung', '2024-09-02', '2024-09-03', 2, 2, 2, 2, 2),
+(3, 'Netzwerkinstallation', 'Neues Netzwerk muss installiert werden', 'Kabel fehlen', 'Geschlossen', '2024-09-03', '2024-09-04', 3, 3, 3, 3, 3),
+(4, 'Hardwaredefekt', 'Hardwareproblem an PC', 'Ersatzteil bestellt', 'Wartend', '2024-09-04', '2024-09-05', 4, 4, 4, 4, 4),
+(5, 'IT-Sicherheitsberatung', 'Beratung zum Thema Sicherheit', 'Eingeschränkte Verfügbarkeit', 'Archiviert', '2024-09-05', '2024-09-06', 5, 5, 5, 5, 5);
 
 --
 -- Indizes der exportierten Tabellen
@@ -493,13 +481,6 @@ ALTER TABLE `intern_residiert`
 --
 ALTER TABLE `kunde`
   ADD PRIMARY KEY (`PK_Kunde`);
-
---
--- Indizes für die Tabelle `leitet_ab`
---
-ALTER TABLE `leitet_ab`
-  ADD PRIMARY KEY (`FK_Rechnung`,`FK_Ticket`),
-  ADD KEY `FK_Ticket` (`FK_Ticket`);
 
 --
 -- Indizes für die Tabelle `mitarbeiter`
@@ -656,13 +637,6 @@ ALTER TABLE `bearbeitet`
 ALTER TABLE `intern_residiert`
   ADD CONSTRAINT `intern_residiert_ibfk_1` FOREIGN KEY (`FK_Ort`) REFERENCES `ort` (`PK_Ort`),
   ADD CONSTRAINT `intern_residiert_ibfk_2` FOREIGN KEY (`FK_EigeneFirma`) REFERENCES `eigene_firma` (`PK_EigeneFirma`);
-
---
--- Constraints der Tabelle `leitet_ab`
---
-ALTER TABLE `leitet_ab`
-  ADD CONSTRAINT `leitet_ab_ibfk_1` FOREIGN KEY (`FK_Rechnung`) REFERENCES `rechnung` (`Rechnungsnr`),
-  ADD CONSTRAINT `leitet_ab_ibfk_2` FOREIGN KEY (`FK_Ticket`) REFERENCES `ticket` (`PK_Ticket`);
 
 --
 -- Constraints der Tabelle `mitarbeiter`
