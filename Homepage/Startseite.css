@@ -37,68 +37,6 @@ header h1 a {
     text-decoration: none;
 }
 
-nav {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    padding-bottom: 5px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-nav li {
-    padding: 0 100px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 2em;
-    padding: 10px;
-    border: 2px solid transparent;
-    border-radius: 5px;
-}
-
-nav a:active {
-    color: #3498db;
-}
-
-
-nav a:hover {
-    color: #3498db;
-}
-
-
-
-nav {
-    margin-top: 10px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
 main {
     flex: 1;
     padding: 20px;
