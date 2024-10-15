@@ -1,7 +1,8 @@
 <?php
+include("../../conn.php");
+
 try {
-  $handler = new PDO("mysql:host=localhost;dbname=oberstufe_db1", "oberstufe_db1", 'ku7j$YBL7@Eum?NWsm');
-  $stmt = $handler->prepare("SELECT * FROM mitarbeiter");
+  $stmt = $conn->prepare("SELECT * FROM mitarbeiter");
   $stmt->execute();
 } catch (PDOException $e) {
   echo "Failed: " . $e->getMessage();
@@ -18,5 +19,4 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     'Email' => $row['Email'],
   ];
 }
-print_r($mitarbeiter);
 return json_encode($mitarbeiter);
