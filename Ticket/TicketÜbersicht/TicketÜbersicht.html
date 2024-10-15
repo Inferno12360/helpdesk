@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="SuchFunktion.js"></script>
+    <title>TktÜbersicht</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">HelpDesk</a>
+          </div>
+          <ul class="navbar-nav"> 
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Ticket
+                <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Erstellen</a></li>
+                <li><a href="#">Übersicht</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Rechnung</a></li>
+            <li><a href="#">Page 3</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="grid-Main">
+        <div class="grid-Suchbereich">
+            <div class="dropdown">
+                <button class="dropbtn" onclick="revealDropdown()">Filter</button>
+                <div class="dropdown-content" id="dropdowncontent">
+
+                  <a href="#"><input type="checkbox" id="FilterKunde" class="Filter" onclick="CheckboxKundeClick()">Kunde</a>
+                  <a href="#"><input type="checkbox" id="FilterTicketNr" class="Filter" onclick="CheckboxTicketNrClick()">TicketNr</a>
+                  <a href="#"><input type="checkbox" id="FilterTitel" class="Filter" onclick="CheckboxTitelClick()">Titel</a>
+                  <a href="#"><input type="checkbox" id="FilterAktuellerBearbeiter" class="Filter" onclick="CheckboxAktBearbeiterClick()">Aktueller Bearbeiter</a>
+                  <a href="#"><input type="checkbox" id="FilterDatum" class="Filter" onclick="CheckboxDatumClick()">Datum</a>
+                  <a href="#">
+                    <select name="Status" id="Status" class="FilterDrop">
+                    <option value="placeholder">- Choose Status -</option>
+                    <option value="Open">Open</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Closed">Closed</option>
+                    </select>
+                  </a>
+                </div>
+              </div> 
+              <div id="output"></div>
+        </div>
+
+
+
+        <div class="grid-Liste">
+            <!-- Template -->
+            <div class="grid-EinTicket">
+                <input type="text" id="TicketNr" class="TempL" value="TicketNr" readonly>
+                <input type="text" id="TicketTitel" class="TempL" value="TicketTitel" readonly>
+                <input type="text" id="Kunde" class="TempL" value="Kunde" readonly>
+                <input type="text" id="Status" class="TempL" value="Status" readonly>
+                <input type="text" id="Prio" class="TempL" value="Prio" readonly>
+                <input type="text" id="Art" class="TempL" value="Art" readonly>
+                <input type="text" id="Bearbeiter" class="TempL" value="Bearbeiter" readonly>
+                <input type="text" id="Ersteller" class="TempL" value="Ersteller" readonly>
+                <input type="date" id="Erstelldatum" class="TempL"  readonly>
+                <button type="submit" id="Bearbeiten">
+                  <img src="Bearbeiten.png" alt="BearbeitenBtn" id="BearbeitenBtn" />
+                </button>
+                <button type="submit" id="Rechnung">
+                  <img src="Rechnung.png" alt="RechnungBtn" id="RechnungBtn" />
+                </button>
+                <button type="submit" id="Löschen">
+                  <img src="X.png" alt="LöschenBtn" id="LöschenBtn" />
+                </button>
+            </div>
+        </div>
+
+      </div>
+</body>
+</html>
