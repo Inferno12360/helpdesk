@@ -1,5 +1,7 @@
 [
   "obsidian-file-link",
   "better-export-pdf",
-  "obsidian-checkbox3states-plugin"
+  "obsidian-checkbox3states-plugin",
+  "obsidian-html-tags-autocomplete",
+  "datepicker"
 ]
