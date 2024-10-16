@@ -1,6 +1,5 @@
 <?php
-include("../../conn.php");
-
+include_once __DIR__ . '/../../conn.php';
 try {
   $stmt = $conn->prepare("SELECT * FROM mitarbeiter");
   $stmt->execute();

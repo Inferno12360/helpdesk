@@ -1,5 +1,5 @@
 <?php
-include("../../conn.php");
+include_once __DIR__ . '/../../conn.php';
 
 $stmt = $conn->prepare("SELECT * FROM rechnung");
 $stmt->execute();

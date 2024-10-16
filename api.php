@@ -16,23 +16,16 @@ $default = array(
   ],
 );
 
-function errorCaller($field)
-{
-  header('Content-Type: application/json');
-  echo json_encode($field);
-}
+include "helper.php";
 
-function outputCaller($jsonData)
-{
-  header('Content-Type: application/json');
-  echo $jsonData;
-}
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 $reqMethod = $_SERVER['REQUEST_METHOD'];
 
 if ($reqMethod != 'POST') {
   $error = $default["error"]["custom"];
-  $error['data'] = "$reqMethod is not supported";
+  $error['data'] = "Request Method $reqMethod is not supported";
   errorCaller($error);
   return;
 }
@@ -56,13 +49,10 @@ if (str_contains($method, 'get')) {
     errorCaller($error);
     return;
   }
-  ob_start();
-  include "$dir/$method/api.php";
-  $response = ob_get_clean() || "Nothing";
-  echo $response;
+  $path = "$dir/$method/api.php";
+  $response = include $path;
   outputCaller($response);
-
-} else if (str_contains($method, 'post')) {
+} else if (str_contains($method, 'set')) {
 
 } else {
   $error = $default['error']['unimplemented_verb'];
