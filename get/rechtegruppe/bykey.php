@@ -2,6 +2,7 @@
 include_once __DIR__ . '/../../conn.php';
 include_once __DIR__ . '/../../helper.php';
 
+
 if (!isset($_REQUEST['key'])) {
   $error = $default["error"]["custom"];
   $error['data'] = "Field key is not set";
@@ -12,15 +13,16 @@ if (!isset($_REQUEST['key'])) {
   $primaryKey = $_REQUEST['key'];
 }
 
-$stmt = $conn->prepare("SELECT * FROM `mitarbeiter` WHERE `mitarbeiter`.`PK_Mitarbeiter` = :pkey");
+$stmt = $conn->prepare("SELECT * FROM `rechtegruppe` WHERE `rechtegruppe`.`PK_Rechtegruppe` = :pkey");
 $stmt->bindParam(":pkey", $primaryKey);
 $stmt->execute();
-$mitarbeiter = [];
+$rechtegruppe = [];
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-  $mitarbeiter[] = [
-    'PK_Mitarbeiter' => $row['PK_Mitarbeiter'],
-    'Vorname' => $row['Vorname'],
-    'Nachname' => $row['Nachname']
+  $rechtegruppe[] = [
+    'PK_Rechtegruppe' => $row['PK_Rechtegruppe'],
+    'Administrationsrechte' => $row['Administrationsrechte'],
+    'Bestelllimit' => $row['Bestelllimit'],
+    'Helpdesk_Fernwartung' => $row['Helpdesk_Fernwartung'],
   ];
 }
-return json_encode($mitarbeiter);
+return json_encode($rechtegruppe);
