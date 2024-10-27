@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily Information/October/Herbstferien.md",
+                "file": "API Documentation/get/Eigene Firma.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Herbstferien"
+              "title": "Eigene Firma"
             }
           }
         ]
@@ -178,23 +178,27 @@
   },
   "active": "9bdf36446d4157e6",
   "lastOpenFiles": [
-    "Daily Information/October/Herbstferien.md",
-    "API Documentation/get/Ticket.md",
+    "API Documentation/img/Eigene_Firma_01.png",
+    "API Documentation/img/Eigene_Firma_00.png",
+    "API Documentation/get/Ort.md",
+    "API Documentation/get/Eigene Firma.md",
+    "API Documentation/get/Rechtegruppe.md",
+    "API Documentation/img/Rechtegruppe_00.png",
+    "API Documentation/img/Rechtegruppe_01.png",
     "API Documentation/get/Mitarbeiter.md",
+    "API Documentation/img/Ort_01.png",
+    "API Documentation/img/Ort_00.png",
+    "API Documentation/get/Art.md",
+    "API Documentation/get/Ticket.md",
+    "Daily Information/October/Herbstferien.md",
     "API Documentation/get/Kunde.md",
     "API Documentation/img/Ticket_02.png",
     "API Documentation/img/Ticket_01.png",
     "API Documentation/img/Ticket_00 (copy 2).png",
     "API Documentation/img/Ticket_00 (copy 1).png",
     "API Documentation/img/Ticket_00.png",
-    "API Documentation/img/Pasted image 20241018165125.png",
     "API Documentation/get/Status.md",
     "API Documentation/get/Priorität.md",
-    "API Documentation/get/Art.md",
-    "API Documentation/img/Status_00.png",
-    "API Documentation/img/Status_01.png",
-    "API Documentation/img/Status.png",
-    "API Documentation/img/Pasted image 20241018164758.png",
     "API Documentation/get/Rechnung.md",
     "API Documentation/Starting Point.md",
     "API Documentation/img",
@@ -215,12 +219,9 @@
     "Daily Information/September/25.09.2024.md",
     "Daily Information/September/23.09.2024.md",
     "Daily Information/September/18.09.2024.md",
-    "Daily Information/September/16.09.2024.md",
     "API Anforderung/API Anforderung.pdf",
     "API Anforderung",
-    "Login-Data.md",
     "ER-Model.pdf",
-    "Daily Information/template.md",
     "ER-Model8219381912808821009.graphml",
     "ER-Model17285254073527930603.graphml"
   ]
