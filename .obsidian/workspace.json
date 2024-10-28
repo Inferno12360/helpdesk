@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "790a001dc16b1e61",
+        "id": "ac66b164f475eec9",
         "type": "tabs",
         "children": [
           {
-            "id": "f3d136f4d166a0f6",
+            "id": "9bdf36446d4157e6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -39,7 +39,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +56,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +66,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -93,7 +99,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Herbstferien"
             }
           },
           {
@@ -105,7 +113,9 @@
                 "file": "API Anforderung/API Anforderung.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Herbstferien"
             }
           },
           {
@@ -116,7 +126,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -128,7 +140,9 @@
                 "sortOrder": "frequency",
                 "showSearch": false,
                 "searchQuery": ""
-              }
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
             }
           },
           {
@@ -176,7 +190,6 @@
     "Daily Information/template.md",
     "Was ist falsch an der Datenbank (2024-09-18).md",
     "ER-Model8219381912808821009.graphml",
-    "ER-Model17285254073527930603.graphml",
-    "lu108192mxn.tmp"
+    "ER-Model17285254073527930603.graphml"
   ]
 }
