@@ -1,11 +1,23 @@
 <?php
 include_once __DIR__ . '/../../conn.php';
+include_once __DIR__ . '/../../helper.php';
 
-$stmt3 = $conn->prepare("SELECT * FROM rechnung");
+
+if (!isset($_REQUEST['key'])) {
+  $error = $default["error"]["custom"];
+  $error['data'] = "Field key is not set";
+  header('Content-Type: application/json');
+  errorCaller($error);
+  die();
+} else {
+  $primaryKey = $_REQUEST['key'];
+}
+
+$stmt3 = $conn->prepare("SELECT * FROM `rechnung` WHERE `rechnung`.`Rechnungsnr` = :pkey");
+$stmt3->bindParam(":pkey", $primaryKey);
 $stmt3->execute();
 $rechnung = [];
 while ($row3 = $stmt3->fetch(PDO::FETCH_ASSOC)) {
-
   $_REQUEST['key'] = $row3['FK_Kunde'];
   $kunde = json_decode(include __DIR__ . '/../kunde/bykey.php', true);
 
