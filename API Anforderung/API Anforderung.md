@@ -1,8 +1,8 @@
 Prioritäten Liste (<span class="red">ROT</span>:<span class="yellow">GELB</span>:<span class="green">GRÜN</span>)
 
 ### <span class="red">Rot</span> (Mit FK-Verfolgung)
-- [ ] Alle Mitarbeiter ausgeben 2024-09-10 10:45
-- [ ] Einzelne Tickets 2024-09-10 10:45
+- [x] Alle Mitarbeiter ausgeben 2024-09-10 10:45
+- [x] Einzelne Tickets 2024-09-10 10:45
 - [ ] Ticket erstellen 2024-10-28 12:50
 - [ ] Rechnung erstellen 2024-10-28 12:50
 
