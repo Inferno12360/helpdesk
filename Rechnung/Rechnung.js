@@ -62,13 +62,6 @@ function saveAsPDF() {
     doc.save(fileName);
 }
 
-
-
-
-
-
-
-
 function printOverlay() {
     window.print();
 }
@@ -101,3 +94,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const emailButton = document.querySelector('.btn[value="Send to E-Mail"]');
     emailButton.addEventListener('click', sendEmail);
 });
+PrepareRechnung();
+function PrepareRechnung(){
+
+    $.post("../../API/api.php", function(data){
+        console.log(data)
+
+ 
+    }).fail(function(jqXHR, textstatus, errorThrown){
+        console.error("Fehler bei der Anfrage:", textstatus, errorThrown);
+    });
+}
+/**       const Ticketnummer = ;
+        const Rechnungsnummer = ;
+        const Mitarbeiter = ;
+        const Kunde = ;
+        const Dienstleistung = ;
+        const Beschreibung = ;
+        const Kosten = ;
+        const Preis = ;
+        const Bezahlungsart = ; */
