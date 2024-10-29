@@ -1,4 +1,4 @@
-![[Pasted image 20241018165125.png]]
+![[Ticket_00.png]]
 #### All
 `getticketall`
 ![[Ticket_01.png]]

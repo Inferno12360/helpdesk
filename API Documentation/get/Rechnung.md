@@ -1,4 +1,4 @@
-![[Pasted image 20241018164333.png]]
+![[Rechnung_00.png]]
 #### All
 `getrechnungall`
 ![[Rechnung_01.png]]
