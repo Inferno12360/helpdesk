@@ -1,4 +1,8 @@
 ![[Kunde_00.png]]
+
+#### All
+`getkundeall`
+
 #### By Key
 `getkundebykey`
 ![[Kunde_01.png]]
