@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Daily Information/October/30.10.2024.md",
+                "file": "Daily Information/November/04.11.2024.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "30.10.2024"
+              "title": "04.11.2024"
             }
           }
         ]
@@ -178,9 +178,11 @@
   },
   "active": "6a63802c39f880d4",
   "lastOpenFiles": [
-    "Daily Information/October/28.10.2024.md",
-    "Daily Information/October/09.10.2024.md",
     "Daily Information/October/30.10.2024.md",
+    "Daily Information/October/09.10.2024.md",
+    "Daily Information/November/04.11.2024.md",
+    "Daily Information/November",
+    "Daily Information/October/28.10.2024.md",
     "API Documentation/img/Kunde_02.png",
     "API Documentation/get/Kunde.md",
     "API Documentation/get/Eigene Firma.md",
