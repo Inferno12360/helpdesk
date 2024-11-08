@@ -1,21 +1,4 @@
 <?php
-$default = array(
-  "error" => [
-    "unimplemented_verb" => [
-      "status" => "error",
-      "data" => "Used Verb that is not implemented"
-    ],
-    "unimplemented_endpoint" => [
-      "status" => "error",
-      "data" => "This Endpoint is not implemented"
-    ],
-    "custom" => [
-      "status" => "error",
-      "data" => ""
-    ],
-  ],
-);
-
 include "helper.php";
 
 error_reporting(E_ALL);
@@ -23,12 +6,12 @@ ini_set('display_errors', 1);
 
 $reqMethod = $_SERVER['REQUEST_METHOD'];
 
-if ($reqMethod != 'POST') {
+/*if ($reqMethod != 'POST') {
   $error = $default["error"]["custom"];
   $error['data'] = "Request Method $reqMethod is not supported";
   errorCaller($error);
   return;
-}
+}*/
 
 if (!isset($_REQUEST['method'])) {
   $error = $default["error"]["custom"];
@@ -61,13 +44,17 @@ $call = str_replace($action, "", $call);
 $changed = false;
 $path = __DIR__ . "/$action";
 $tables = scandir($path);
+
+// Step 1: Try to match exact table names or starting matches
 foreach ($tables as $table) {
-  if (str_contains($call, $table)) {
+  if (str_starts_with($call, $table)) {  // Match table if $call starts with $table
     $changed = true;
     $path .= "/$table";
-    $call = str_replace($table, "", $call);
+    $call = substr($call, strlen($table));  // Remove the matched part from $call
+    break;
   }
 }
+
 if (!$changed) {
   $error = $default['error']['unimplemented_endpoint'];
   header('Content-Type: application/json');
@@ -75,14 +62,18 @@ if (!$changed) {
   return;
 }
 
+// Step 2: Match the endpoint by remaining $call
 $changed = false;
 $endpoints = scandir($path);
 foreach ($endpoints as $endpoint) {
-  if (str_replace(".php", "", $endpoint) == $call) {
+  $endpointName = str_replace(".php", "", $endpoint);
+  if ($endpointName === $call) {  // Exact match for remaining $call
     $path .= "/$endpoint";
     $changed = true;
+    break;
   }
 }
+
 if (!$changed) {
   $error = $default['error']['unimplemented_endpoint'];
   header('Content-Type: application/json');

@@ -21,10 +21,17 @@ while ($mainRow2 = $mainStmt2->fetch(PDO::FETCH_ASSOC)) {
   $art = json_decode(include __DIR__ . '/../art/bykey.php', true);
 
   $_REQUEST['key'] = $mainRow2['FK_Mitarbeiter'];
-  $mitarbeiter = json_decode(include __DIR__ . '/../mitarbeiter/bykey.php', true);
+  $mitarbeiter_values = json_decode(include __DIR__ . '/../mitarbeiter/bykey.php', true);
 
   $_REQUEST['key'] = $mainRow2['FK_Kunde'];
   $kunde = json_decode(include __DIR__ . '/../kunde/bykey.php', true);
+
+  $_REQUEST['key'] = $mainRow2['PK_Ticket'];
+  $bearbeiter = json_decode(include __DIR__ . '/../bearbeitet/bytkey.php', true);
+
+  $_REQUEST['key'] = $mainRow2['PK_Ticket'];
+  $dienstleistung = json_decode(include __DIR__ . '/../abgeleitet/bytkey.php', true);
+
 
   $tickets[] = [
     'PK_Ticket' => $mainRow2['PK_Ticket'],
@@ -37,7 +44,9 @@ while ($mainRow2 = $mainStmt2->fetch(PDO::FETCH_ASSOC)) {
     'Status_Values' => $status,
     'Priorität_Values' => $prioritaet,
     'Art_Values' => $art,
-    'Mitarbeiter_Values' => $mitarbeiter,
+    'Mitarbeiter_Values' => $mitarbeiter_values,
+    'Bearbeiter_Values' => $bearbeitet,
+    'Dienstleistung_Values' => $dienstleistung,
     'Kunde_Values' => $kunde,
   ];
 }

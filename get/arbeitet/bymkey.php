@@ -2,6 +2,7 @@
 include_once __DIR__ . '/../../conn.php';
 include_once __DIR__ . '/../../helper.php';
 
+
 if (!isset($_REQUEST['key'])) {
   $error = $default["error"]["custom"];
   $error['data'] = "Field key is not set";
@@ -12,17 +13,14 @@ if (!isset($_REQUEST['key'])) {
   $primaryKey = $_REQUEST['key'];
 }
 
-$stmt = $conn->prepare("SELECT * FROM `kunde` WHERE `kunde`.`PK_Kunde` = :pkey");
+$stmt = $conn->prepare("SELECT * FROM `arbeitet` WHERE `arbeitet`.`FK_Mitarbeiter` = :pkey");
 $stmt->bindParam(":pkey", $primaryKey);
 $stmt->execute();
-$kunde = [];
+$bezahlungsart = [];
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-  $kunde[] = [
-    'PK_Kunde' => $row['PK_Kunde'],
-    'Kundennummer' => $row['Kundennummer'],
-    'Firmenname' => $row['Firmenname'],
-    'Email' => $row['Email'],
-    'Passwort' => $row['Passwort'],
+  $bezahlungsart[] = [
+    'Mitarbeiter' => $row['FK_Mitarbeiter'],
+    'Kunde' => $row['FK_Kunde']
   ];
 }
-return json_encode($kunde);
+return json_encode($bezahlungsart);

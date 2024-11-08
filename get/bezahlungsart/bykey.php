@@ -20,8 +20,8 @@ $bezahlungsart = [];
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   $bezahlungsart[] = [
     'PK_Bezahlungsart' => $row['PK_Bezahlungsart'],
-    'Beschreibung ' => $row['Beschreibung'],
-    'Artname ' => $row['Artname'],
+    'Beschreibung' => $row['Beschreibung'],
+    'Artname' => $row['Artname'],
   ];
 }
 return json_encode($bezahlungsart);

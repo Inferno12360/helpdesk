@@ -14,8 +14,11 @@ while ($mainRow = $mainStmt->fetch(PDO::FETCH_ASSOC)) {
   $_REQUEST['key'] = $mainRow['FK_Rechtegruppe'];
   $Rechtegruppe = json_decode(include __DIR__ . '/../rechtegruppe/bykey.php', true);
 
-  $_REQUEST['key'] = $mainRow['FK_EigeneFirma'];
-  $Eigenefirma = json_decode(include __DIR__ . '/../eigene_firma/bykey.php', true);
+  $_REQUEST['key'] = $mainRow['PK_Mitarbeiter'];
+  $arbeitet = json_decode(include __DIR__ . '/../arbeitet/bymkey.php', true);
+
+  $_REQUEST['KEY'] = $arbeitet[0]['Kunde'];
+  $kunde = json_decode(include __DIR__ . '/../kunde/bykey.php', true);
 
   $mitarbeiter[] = [
     'PK_Mitarbeiter' => $mainRow['PK_Mitarbeiter'],
@@ -25,9 +28,10 @@ while ($mainRow = $mainStmt->fetch(PDO::FETCH_ASSOC)) {
     'Festnetznummer' => $mainRow['Festnetznummer'],
     'Mobilnummer' => $mainRow['Mobilnummer'],
     'Email' => $mainRow['Email'],
+    'Passwort' => $mainRow['Passwort'],
     'Ort_Values' => $Ort,
     'Rechtegruppe_Values' => $Rechtegruppe,
-    'EigeneFirma' => $Eigenefirma,
+    'Firma' => $kunde,
   ];
 }
 return json_encode($mitarbeiter);
