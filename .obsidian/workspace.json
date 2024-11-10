@@ -11,10 +11,14 @@
             "id": "e78c2af31cdf7b68",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "API Documentation/get/bearbeitet.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "bearbeitet"
             }
           }
         ]
@@ -149,10 +153,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "API Documentation/get/Ticket.md"
+                "file": "API Documentation/get/bearbeitet.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Ticket"
+              "title": "Outline of bearbeitet"
             }
           }
         ]
@@ -169,51 +173,58 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false
+      "command-palette:Open command palette": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
   "active": "e78c2af31cdf7b68",
   "lastOpenFiles": [
+    "API Documentation/get/arbeitet.md",
     "API Documentation/get/abgeleitet.md",
+    "API Documentation/get/Ticket.md",
     "API Documentation/get/Status.md",
-    "Daily Information/November/06.11.2024.md",
+    "API Documentation/get/Rechtegruppe.md",
     "API Documentation/get/Rechnung.md",
     "API Documentation/get/Priorität.md",
+    "API Documentation/get/Ort.md",
     "API Documentation/get/Mitarbeiter.md",
     "API Documentation/get/Kunde.md",
-    "API Documentation/get/arbeitet.md",
+    "API Documentation/get/Dienstleistung.md",
+    "API Documentation/get/Bezahlungsart.md",
+    "API Documentation/get/Art.md",
+    "API Documentation/Starting Point.md",
+    "API Documentation/Glossar of Methods.md",
+    "API Documentation/get/bearbeitet.md",
+    "API Anforderung/API Anforderung.md",
+    "kumulierte Dokumentation/API Deadline Liste.png",
+    "kumulierte Dokumentation/Screenshot 2024-11-09 at 16-52-42 API Anforderung.png",
+    "kumulierte Dokumentation/API Anforderung.html",
+    "Daily Information/October/Herbstferien.md",
+    "Daily Information/October/09.10.2024.md",
+    "Daily Information/October/28.10.2024.md",
+    "Daily Information/October/07.10.2024.md",
+    "Daily Information/October/02.10.2024.md",
+    "Daily Information/September/30.09.2024.md",
+    "Daily Information/September/25.09.2024.md",
+    "Daily Information/September/23.09.2024.md",
+    "Daily Information/September/18.09.2024.md",
+    "kumulierte Dokumentation/Physischer Datenbankentwurf.svg",
+    "kumulierte Dokumentation/ERM Modell.svg",
+    "kumulierte Dokumentation/Untitled(1).svg",
+    "kumulierte Dokumentation/ERM-Modell.png",
+    "Anforderungslisten/Anforderungskatalog für ein Ticketsystem.pdf",
+    "kumulierte Dokumentation/dist/index.html",
+    "kumulierte Dokumentation/dist",
+    "kumulierte Dokumentation/index.html",
+    "kumulierte Dokumentation/package.json.2648290326",
+    "kumulierte Dokumentation/pnpm-lock.yaml.4002978515",
+    "kumulierte Dokumentation/node_modules/@eslint",
+    "kumulierte Dokumentation/node_modules/@eslint-community",
+    "kumulierte Dokumentation/_tmp_29511_94a036be29d331b6504c48a73a67c7b4",
     "API Documentation/img/Status_02.png",
     "API Documentation/img/Rechnung_02.png",
     "API Documentation/img/Priorität_02.png",
-    "API Documentation/get/Ticket.md",
-    "API Documentation/get/Rechtegruppe.md",
-    "API Documentation/get/Ort.md",
-    "API Documentation/get/Dienstleistung.md",
-    "API Documentation/get/Eigene Firma.md",
-    "API Documentation/get/Bezahlungsart.md",
-    "API Documentation/get/bearbeitet.md",
-    "API Documentation/get/Art.md",
-    "API Documentation/img/arbeitet_01.png",
-    "API Documentation/img/arbeitet_00.png",
-    "Daily Information/November/04.11.2024.md",
-    "Daily Information/October/30.10.2024.md",
-    "Daily Information/October/09.10.2024.md",
-    "Daily Information/November",
-    "Daily Information/October/28.10.2024.md",
-    "API Documentation/img/Kunde_02.png",
-    "API Documentation/img/dienstleisung_02.png",
-    "API Documentation/img/dienstleisung_01.png",
-    "API Documentation/img/dienstleisung_00.png",
-    "API Documentation/img/bezahlungsart_01.png",
-    "API Documentation/Starting Point.md",
-    "Daily Information/October/Untitled.md",
-    "API Anforderung/API Anforderung.md",
-    "Daily Information/30.09.2024.md",
-    "Daily Information/25.09.2024.md",
-    "API Anforderung/API Anforderung.pdf",
-    "API Anforderung",
-    "ER-Model.pdf",
-    "ER-Model8219381912808821009.graphml",
-    "ER-Model17285254073527930603.graphml"
+    "API Documentation/img/arbeitet_01.png"
   ]
 }
