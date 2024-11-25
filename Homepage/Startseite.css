@@ -52,6 +52,7 @@ main {
     padding: 20px;
 }
 
+/* Struktur für Hero-Bereich (wie Bild 2) */
 .hero {
     background-color: #ecf0f1;
     padding: 40px;
@@ -68,61 +69,41 @@ main {
     margin-bottom: 30px;
 }
 
-.about-us {
-    margin-top: 60px;
-}
-
-.about-us h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.about-us p {
-    font-size: 1em;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.features {
-    margin-top: 60px;
-}
-
-.features h2 {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.feature-grid {
+.listeContainer {
     display: flex;
+    flex-direction: column;
     gap: 20px;
-    flex-wrap: wrap;
+    margin-top: 40px;
 }
 
-.feature-item {
-    flex: 1;
-    min-width: 250px;
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 5px;
+.listeContainer div {
+    display: flex;
+    justify-content: space-between;
+    background-color: #3498db;
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.feature-item h3 {
-    margin-top: 0;
+.personalContainer div {
+    display: flex;
+    justify-content: space-between;
+    background-color: #3498db;
+    color: white;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
-}
-
-table, th, td {
-    border: 1px solid #ddd;
+    margin-top: 20px;
 }
 
 th, td {
-    padding: 12px;
+    padding: 10px;
     text-align: left;
+    border: 1px solid #ddd;
 }
 
 th {
@@ -132,37 +113,4 @@ th {
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
-}
-
-.styled-select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #3498db;
-    background-color: #ecf0f1;
-    color: #2c3e50;
-    font-size: 1.1em;
-    margin-bottom: 20px;
-}
-
-input[type="text"], input[type="datetime-local"] {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #3498db;
-    background-color: #ecf0f1;
-    color: #2c3e50;
-    font-size: 1.1em;
-    margin-bottom: 20px;
-}
-
-input[type="text"]:focus, select:focus {
-    border-color: #2980b9;
-}
-
-.feature-item {
-    background-color: #f7f7f7;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
