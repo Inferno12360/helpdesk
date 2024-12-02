@@ -1,0 +1,211 @@
+{
+  "main": {
+    "id": "317ce0151d3751bd",
+    "type": "split",
+    "children": [
+      {
+        "id": "6faa3e44333f036d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "73f102a714780296",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "updatearbeitetbykkey.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "updatearbeitetbykkey"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d9e658be445d4f30",
+    "type": "split",
+    "children": [
+      {
+        "id": "207ac2080ec61b85",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d340f71c313eeadb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "3dfb13de4637a5ed",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "e52a798a1c65d663",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "211ee89b3e2d9dde",
+    "type": "split",
+    "children": [
+      {
+        "id": "f8de14c53045fe66",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2cc7a2b93ce42437",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "deleteabgeleitetbydkey.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for deleteabgeleitetbydkey"
+            }
+          },
+          {
+            "id": "b379fce497e7b3c3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "deleteabgeleitetbydkey.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from deleteabgeleitetbydkey"
+            }
+          },
+          {
+            "id": "7025cea0279a70ea",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "8a299529a517800a",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "deleteabgeleitetbydkey.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of deleteabgeleitetbydkey"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "73f102a714780296",
+  "lastOpenFiles": [
+    "updatedienstleistungmain.md",
+    "updaterechnungmain.md",
+    "updateticketmain.md",
+    "updatestatusmain.md",
+    "updateresidiertbyokey.md",
+    "getbezahlungsartbykey.md",
+    "getbearbeitetbytkey.md",
+    "getartbykey.md",
+    "deletestatusmain.md",
+    "deleterechtegruppemain.md",
+    "deleteprioritaetmain.md",
+    "deleteabgeleitetbydkey.md",
+    "deleteabgeleitetbytkey.md",
+    "deletebearbeitetbymkey.md",
+    "deletemitarbeitermain.md",
+    "deleteortmain.md",
+    "output.pdf",
+    "table_of_contents.md",
+    "updateresidiertbykkey.md",
+    "updaterechtegruppemain.md",
+    "updateprioritaetmain.md",
+    "updateortmain.md",
+    "updatemitarbeitermain.md",
+    "updatekundemain.md",
+    "updatebezahlungsartmain.md",
+    "updatebearbeitetbytkey.md",
+    "updatebearbeitetbymkey.md",
+    "img/deleterechnungmain.png",
+    "sedUQVjnc",
+    "sed428lq9",
+    "seddVlBKt",
+    "home/ninh/helpdesk",
+    "home/ninh",
+    "home",
+    "img/getbezahlungsartbykey.png",
+    "img/updatebezahlungsartmain.png",
+    "img/updarebezahlungsartmain.png",
+    "img/deletebezahlungsartmain.png",
+    "img/setbezahlungsartmain.png",
+    "img/getbezahlungsartall.png",
+    "img/updatebearbeitetbymkey.png",
+    "img/deletebearbeitetbymkey.png",
+    "img/deletebearbeitetbytkey.png"
+  ]
+}
