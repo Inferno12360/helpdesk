@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Intro.md",
+                "file": "markdown/deletebezahlungsartmain.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Intro"
+              "title": "deletebezahlungsartmain"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Intro.md",
+                "file": "markdown/deletebezahlungsartmain.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Intro"
+              "title": "Backlinks for deletebezahlungsartmain"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Intro.md",
+                "file": "markdown/deletebezahlungsartmain.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Intro"
+              "title": "Outgoing links from deletebezahlungsartmain"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Intro.md"
+                "file": "markdown/deletebezahlungsartmain.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of Intro"
+              "title": "Outline of deletebezahlungsartmain"
             }
           }
         ]
@@ -162,10 +162,22 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "a5bb955b0dd1b3b3",
+  "active": "9953def01af77331",
   "lastOpenFiles": [
-    "markdown/deletebezahlungsartmain.md",
+    "get/ticket/bykey.php",
+    "get/ticket/all.php",
+    "get/status/bykey.php",
+    "get/status/all.php",
+    "get/residiert/bykkey.php",
+    "get/rechtegruppe/bykey.php",
+    "get/rechtegruppe/all.php",
+    "get/rechnung/bytkey.php",
+    "get/rechnung/bykey.php",
+    "get/rechnung/all.php",
+    "get/prioritaet/bykey.php",
+    "combined.md",
     "Intro.md",
+    "markdown/deletebezahlungsartmain.md",
     "online/update/ticket/main.md",
     "online/update/status/main.md",
     "online/update/residiert/byokey.md",
@@ -185,21 +197,9 @@
     "online/update/arbeitet/bykkey.md",
     "online/update/abgeleitet/bytkey.md",
     "online/update/abgeleitet/bydkey.md",
-    "online/update/ticket",
-    "online/update/status",
-    "online/update/residiert",
-    "online/update/rechtegruppe",
-    "online/update/rechnung",
-    "online/update/prioritaet",
-    "online/update/ort",
-    "online/update/mitarbeiter",
-    "online/update/kunde",
-    "online/update/dienstleistung",
     "online/get/ticket/bykey.md",
     "online/get/ticket/all.md",
     "online/get/status/bykey.md",
-    "online/get/status/all.md",
-    "online/get/residiert/bykkey.md",
     "img/getstatusbykey.png.png",
     "img/getmitarbeiterbykey.png",
     "img/deletestatusmain.png.png",
