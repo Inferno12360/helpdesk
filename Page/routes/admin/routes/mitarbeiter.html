@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mitarbeiter</title>
+  <script src="/helpdesk/Page/js/jquery.js"></script>
+  <script src="../js/helper.js"></script>
+  <script src="../js/mitarbeiter.js"></script>
+  <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="../style/mitarbeiter.css">
+</head>
+
+<body onload="load()" id="body">
+  <main class="container">
+    <div class="card">
+      <div class="row">
+        <label for="Vorname">Vorname:</label>
+        <input type="text" id="Vorname" />
+        <label for="Nachname">Nachname:</label>
+        <input type="text" id="Nachname" />
+        <label for="Position">Position:</label>
+        <input type="text" id="Position" />
+      </div>
+
+      <div class="row">
+        <label for="Festnetznummer">Festnetznummer:</label>
+        <input type="tel" id="Festnetznummer" />
+        <label for="Mobilnummer">Mobilnummer:</label>
+        <input type="tel" id="Mobilnummer" />
+        <label for="EMail">EMail:</label>
+        <input type="email" id="EMail" />
+        <label for="Password">Password:</label>
+        <input type="password" id="Password" />
+      </div>
+
+      <div class="row">
+        <label for="Ort">Ort:</label>
+        <select name="ort" id="Ort"></select>
+        <label for="Rechtegruppe">Rechtegruppe:</label>
+        <select name="rechtegruppe" id="Rechtegruppe"></select>
+        <button type="submit" onclick="submitMitarbeiter()">Neuen Mitarbeiter erstellen</button>
+      </div>
+    </div>
+
+    <div class="search_container">
+      <div class="search_bar">
+        <input type="text" id="search" class="input_field" placeholder="Search..." onchange="kundeSearch(this.value)">
+        <button type="reset" onclick="kundeSearch('')" class="reset_button">Reset</button>
+      </div>
+      <div class="kunden_list" id="KundenListe">
+      </div>
+    </div>
+
+    <div class="data_container" id="MitarbeiterContainer">
+
+    </div>
+  </main>
+
+</body>
+
+</html>

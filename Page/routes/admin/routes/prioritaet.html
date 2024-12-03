@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priorität</title>
+  <script src="/helpdesk/Page/js/jquery.js"></script>
+  <script src="../js/helper.js"></script>
+  <script src="../js/prioritaet.js"></script>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body onload="load()" id="body">
+  <main class="container">
+    <div class="card">
+      <div class="row">
+        <label for="Priotitaetsname">Priotitätsname</label>
+        <input type="text" id="Priotitaetsname">
+        <label for="Beschreibung">Beschreibung</label>
+        <input type="text" id="Beschreibung">
+        <button type="submit" onclick="submitPrioritaet()">Neue Priorität hinzufügen</button>
+      </div>
+    </div>
+    <div class="data_container" id="PrioritaetContainer">
+
+    </div>
+  </main>
+</body>
+
+</html>

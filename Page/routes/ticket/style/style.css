@@ -1,0 +1,332 @@
+#navbar {
+  background-color: #333;
+  /* Dunkler Hintergrund für die Navbar */
+  padding: 10px 0;
+  /* Abstand oben und unten */
+  text-align: center;
+  /* Zentriert den Inhalt */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar h1 {
+  margin: 0;
+  /* Entfernt den Standardabstand */
+}
+
+#navbar h1 a {
+  color: #ffffff;
+  /* Weiße Schriftfarbe für den Titel */
+  text-decoration: none;
+  /* Entfernt die Unterstreichung */
+  font-size: 24px;
+  /* Schriftgröße des Titels */
+  font-weight: bold;
+}
+
+#navbar nav ul {
+  list-style: none;
+  /* Entfernt Aufzählungszeichen */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  /* Flexbox für horizontale Ausrichtung */
+  justify-content: center;
+  /* Zentriert die Navigationselemente */
+}
+
+#navbar nav li {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+#navbar nav ul li a {
+  color: #ccc;
+  /* Helle Schriftfarbe für Links */
+  text-decoration: none;
+  /* Keine Unterstreichung */
+  font-size: 18px;
+  /* Schriftgröße der Links */
+  transition: color 0.3s ease;
+  /* Sanfter Übergang für Hover-Effekte */
+}
+
+#navbar nav ul li a:hover {
+  color: #007BFF;
+  /* Farbe ändern bei Hover */
+}
+
+#navbar nav ul li a.active {
+  color: #ffffff;
+  /* Aktiven Link hervorheben */
+  font-weight: bold;
+  /* Fettdruck für den aktiven Link */
+}
+
+#navbar nav ul li a:focus {
+  outline: none;
+  /* Entfernt den Standardfokusrahmen */
+}
+
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-menu li {
+  display: block;
+}
+
+.dropdown-menu li a {
+  color: #ccc;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #000;
+  color: white;
+}
+
+.navbar-nav li:hover .dropdown-menu {
+  display: block;
+}
+
+
+
+.dropbtn {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 15px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/*
+  .dropdown:hover .dropdown-content {display: block;}
+  */
+.dropdown:hover .dropbtn {
+  background-color: darkgrey;
+}
+
+
+
+.grid-Suchbereich {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 50px;
+  border: solid darkgrey;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.dropbtn {
+  background-color: #49474e;
+  color: darkgrey;
+  font-size: 30px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.SuchFelderEingabe {
+  width: 25%;
+  height: 100%;
+  font-size: 15px;
+  padding-left: 10px;
+}
+
+#output {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.grid-Liste {
+  display: grid;
+  grid-template-columns: 100%;
+  margin: 20px;
+  padding: 10px;
+  border: solid darkgrey;
+  border-radius: 20px;
+  background-color: #333333;
+}
+
+.TempL {
+  width: 70px;
+  height: 100%;
+
+}
+
+.grid-EinTicket {
+  display: grid;
+  grid-template-columns: 10% 20% 12.5% 5% 5% 5% 12.5% 12.5% 7% 3.5% 3.5% 3.5%;
+  grid-template-rows: 30px;
+  margin: 20px;
+  padding: 10px;
+  border: solid darkgrey;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.grid-EinTicket>* {
+  width: calc(100% - 5px);
+  height: 100%;
+  box-sizing: border-box;
+  margin-right: 5px;
+}
+
+#Erstelldatum {
+  text-align: center;
+}
+
+#BearbeitenBtn {
+  width: 25px;
+  height: 25px;
+}
+
+#RechnungBtn {
+  width: 27px;
+  height: 27px;
+}
+
+#LöschenBtn {
+  width: 17px;
+  height: 17px;
+}
+
+button:hover {
+  transform: rotate(360deg);
+}
+
+/*
+.dropdown-content {
+  display: none; /* oder block, je nach Zustand
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  pointer-events: auto;
+}
+*/
+
+body {
+  background-color: rgb(238, 238, 238);
+}
+
+
+/* Grundlegende Stile für Buttons */
+.FilterBtn {
+  background-color: transparent;
+  border: none;
+  color: #007BFF;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Unterscheidung der Status-Buttons */
+.StatusBtn {
+  font-weight: bold;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+/* Dropdown-Styles für den Status */
+.status-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.status-dropdown-content .FilterBtn {
+  background-color: #f9f9f9;
+  border: none;
+  padding: 12px 16px;
+}
+
+.dropdown-content {
+  position: relative;
+}
+
+.dropdown-content a,
+.dropdown-content button {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+/* Hover-Effekt für Buttons */
+.FilterBtn:hover {
+  background-color: #ddd;
+}
+
+.FilterBtn:active {
+  background-color: #ccc;
+}
+
+/* Reset-Button im Dropdown */
+.reset-btn {
+  background-color: #4CAF50;
+  /* Grün */
+  color: white;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  /* Nimmt die gesamte Breite ein */
+}
+
+.reset-btn:hover {
+  background-color: #45a049;
+  /* Dunkleres Grün bei Hover */
+}

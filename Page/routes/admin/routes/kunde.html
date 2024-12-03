@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kunde</title>
+  <script src="/helpdesk/Page/js/jquery.js"></script>
+  <script src="../js/helper.js"></script>
+  <script src="../js/kunde.js"></script>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body onload="load()" id="body">
+  <main class="container">
+    <div class="card">
+      <div class="row">
+        <label for="Kundennummer">Kundennummer</label>
+        <input type="text" id="Kundennummer">
+        <label for="Firmenname">Firmenname</label>
+        <input type="text" id="Firmenname">
+        <label for="EMail">EMail</label>
+        <input type="email" id="EMail">
+        <label for="Password">Password</label>
+        <input type="password" id="Password">
+      </div>
+      <div class="row">
+        <label for="Ort">Ort:</label>
+        <select name="ort" id="Ort"></select>
+        <button type="submit" onclick="submitKunde()">Neuen Kunde hinzufügen</button>
+      </div>
+    </div>
+    <div class="data_container" id="KundeContainer">
+
+    </div>
+  </main>
+</body>
+
+</html>

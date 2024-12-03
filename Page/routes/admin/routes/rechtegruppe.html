@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rechtegruppe</title>
+  <script src="/helpdesk/Page/js/jquery.js"></script>
+  <script src="../js/helper.js"></script>
+  <script src="../js/rechtegruppe.js"></script>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body onload="load()" id="body">
+  <main class="container">
+    <div class="card">
+      <div class="row">
+        <label for="Bestelllimit">Bestelllimit</label>
+        <input type="number" id="Bestelllimit">
+        <label for="Administrationsrechte">Administrationsrechte</label>
+        <input type="checkbox" id="Administrationsrechte">
+        <label for="Helpdesk_Fernwartung">Helpdesk_Fernwartung</label>
+        <input type="checkbox" id="Helpdesk_Fernwartung">
+        <button type="submit" onclick="submitRechtegruppe()">Neue Rechtegruppe hinzufügen</button>
+      </div>
+    </div>
+    <div class="data_container" id="rechtegruppeContainer">
+
+    </div>
+  </main>
+</body>
+
+</html>

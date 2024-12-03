@@ -1,0 +1,114 @@
+@import url(/helpdesk/Page/style/root.css);
+
+.container {
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  padding: 20px;
+  box-shadow: var(--box_shadow);
+  background-color: var(--container_color);
+  border-radius: var(--radius);
+  color: white;
+}
+
+.container form {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+.container h2 {
+  text-align: center;
+  font-size: larger;
+}
+
+.input {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.input .textfield {
+  border: none;
+  border-bottom: 1px solid grey;
+  width: 100%;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  background-color: transparent;
+  color: white;
+}
+
+.textfield::placeholder {
+  color: white;
+}
+
+.textfield:focus {
+  outline: none;
+}
+
+.action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.action a {
+  width: 10%;
+}
+
+.login {
+  margin-top: 0.15rem;
+  border-radius: var(--radius);
+  width: 40%;
+  border-radius: 0;
+  font-weight: 400;
+  border: 1px solid transparent;
+  background-color: var(--button_color);
+  color: white;
+}
+
+.login:focus {
+  outline: none;
+}
+
+.back {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(1);
+}
+
+#popup {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: white;
+  opacity: 0;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  transform: translateY(-20px);
+  z-index: 1000;
+  display: none;
+}
+
+#popup.success {
+  background-color: #4CAF50;
+}
+
+#popup.error {
+  background-color: #F44336;
+}
+
+#popup[aria-live] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}

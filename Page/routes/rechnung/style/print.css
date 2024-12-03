@@ -1,0 +1,58 @@
+.print-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+    page-break-inside: avoid; /* Verhindert den Umbruch innerhalb der Container */
+}
+
+.print-box {
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #000;
+    page-break-inside: avoid; /* Verhindert den Umbruch innerhalb einer einzelnen Box */
+}
+
+#print-box-1, #print-box-2, #print-box-3 {
+    flex: 1 1;
+}
+
+#print-box-5 {
+    flex: 3;
+}
+
+#print-box-6 {
+    flex: 1;
+}
+
+#print-box-7 {
+    width: 200px;
+    margin-top: 20px;
+}
+
+#print-box-8 {
+    width: 500px;
+}
+
+@media print {
+    body {
+        margin: 0;
+    }
+
+    .print-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        page-break-inside: avoid;
+    }
+
+    .print-box {
+        padding: 15px;
+        border: 1px solid #000;
+        page-break-inside: avoid;
+    }
+
+    #print-box-8 {
+        page-break-before: auto;
+    }
+}

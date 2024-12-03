@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="./style/style.css">
+  <script src="./js/search.js"></script>
+  <script src="./js/script.js"></script>
+  <script src="/helpdesk/Page/js/jquery.js"></script>
+  <script src="/helpdesk/Page/js/script.js"></script>
+  <link rel="stylesheet" href="/helpdesk/Page/style/footer.css">
+  <title>TktÜbersicht</title>
+</head>
+
+<body onload="javascript:GetTicket()">
+  <header id="Navigation">
+
+  </header>
+
+  <div class="grid-Main">
+    <div class="grid-Suchbereich">
+      <div class="dropdown">
+        <button class="dropbtn" onclick="revealDropdown()">Filter</button>
+        <div class="dropdown-content" id="dropdowncontent">
+          <!-- Statt Checkboxen jetzt Buttons -->
+          <button class="FilterBtn" id="FilterKunde" onclick="CheckboxKundeClick()">Kunde</button>
+          <button class="FilterBtn" id="FilterTicketNr" onclick="CheckboxTicketNrClick()">TicketNr</button>
+          <button class="FilterBtn" id="FilterTitel" onclick="CheckboxTitelClick()">Titel</button>
+          <button class="FilterBtn" id="FilterAktuellerBearbeiter" onclick="CheckboxAktBearbeiterClick()">Aktueller
+            Bearbeiter</button>
+          <button class="FilterBtn" id="FilterDatum" onclick="CheckboxDatumClick()">Datum</button>
+
+          <!-- Status Dropdown als Button gestalten -->
+          <button class="FilterBtn StatusBtn" onclick="toggleStatusDropdown()">Status</button>
+          <div id="StatusDropdown" class="status-dropdown-content">
+            <button class="FilterBtn" onclick="setStatus('Open')">Open</button>
+            <button class="FilterBtn" onclick="setStatus('In Progress')">In Progress</button>
+            <button class="FilterBtn" onclick="setStatus('Closed')">Closed</button>
+          </div>
+
+          <!-- Reset-Button zum Zurücksetzen der Suche -->
+          <button class="FilterBtn reset-btn" type="button" onclick="resetSearch()">Alle Tickets anzeigen</button>
+        </div>
+      </div>
+
+      <div id="output"></div>
+    </div>
+
+
+
+
+
+
+    <div class="grid-Liste" id="Output-Tickets">
+      <!-- Template 
+      <div class="grid-EinTicket">
+        <input type="text" id="TicketNr" class="TempL" value="TicketNr" readonly>
+        <input type="text" id="TicketTitel" class="TempL" value="TicketTitel" readonly>
+        <input type="text" id="Kunde" class="TempL" value="Kunde" readonly>
+        <input type="text" id="Status" class="TempL" value="Status" readonly>
+        <input type="text" id="Prio" class="TempL" value="Prio" readonly>
+        <input type="text" id="Art" class="TempL" value="Art" readonly>
+        <input type="text" id="Bearbeiter" class="TempL" value="Bearbeiter" readonly>
+        <input type="text" id="Ersteller" class="TempL" value="Ersteller" readonly>
+        <input type="date" id="Erstelldatum" class="TempL" readonly>
+        <button type="submit" id="Bearbeiten">
+          <img src="Bearbeiten.png" alt="BearbeitenBtn" id="BearbeitenBtn" />
+        </button>
+        <button type="submit" id="Rechnung">
+          <img src="Rechnung.png" alt="RechnungBtn" id="RechnungBtn" />
+        </button>
+        <button type="submit" id="Löschen">
+          <img src="X.png" alt="LöschenBtn" id="LöschenBtn" />
+        </button>
+      </div>
+      -->
+    </div>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,313 @@
+#navbar {
+  background-color: #333;
+  /* Dunkler Hintergrund für die Navbar */
+  padding: 10px 0;
+  /* Abstand oben und unten */
+  text-align: center;
+  /* Zentriert den Inhalt */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar h1 {
+  margin: 0;
+  /* Entfernt den Standardabstand */
+}
+
+#navbar h1 a {
+  color: #ffffff;
+  /* Weiße Schriftfarbe für den Titel */
+  text-decoration: none;
+  /* Entfernt die Unterstreichung */
+  font-size: 24px;
+  /* Schriftgröße des Titels */
+  font-weight: bold;
+}
+
+#navbar nav ul {
+  list-style: none;
+  /* Entfernt Aufzählungszeichen */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  /* Flexbox für horizontale Ausrichtung */
+  justify-content: center;
+  /* Zentriert die Navigationselemente */
+}
+
+#navbar nav li {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+#navbar nav ul li a {
+  color: #ccc;
+  /* Helle Schriftfarbe für Links */
+  text-decoration: none;
+  /* Keine Unterstreichung */
+  font-size: 18px;
+  /* Schriftgröße der Links */
+  transition: color 0.3s ease;
+  /* Sanfter Übergang für Hover-Effekte */
+}
+
+#navbar nav ul li a:hover {
+  color: #007BFF;
+  /* Farbe ändern bei Hover */
+}
+
+#navbar nav ul li a.active {
+  color: #ffffff;
+  /* Aktiven Link hervorheben */
+  font-weight: bold;
+  /* Fettdruck für den aktiven Link */
+}
+
+#navbar nav ul li a:focus {
+  outline: none;
+  /* Entfernt den Standardfokusrahmen */
+}
+
+
+
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #333;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-menu li {
+  display: block;
+}
+
+.dropdown-menu li a {
+  color: #ccc;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #000;
+  color: white;
+}
+
+.navbar-nav li:hover .dropdown-menu {
+  display: block;
+}
+
+
+
+.grid-Kunde {
+  display: grid;
+  grid-template-columns: 35%;
+  grid-template-rows: 35px;
+  margin: 20px;
+  column-gap: 10px;
+  /*border: 5px outset aquamarine;
+  border-radius: 20px;
+  padding: 10px;*/
+}
+
+#Kunde {
+  border: 4px solid darkgrey;
+  border-radius: 20px;
+  padding-left: 10px;
+}
+
+.grid-Titel {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  grid-template-rows: 40px;
+  margin: 20px;
+  margin-top: 0px;
+  column-gap: 10px;
+  border: 4px solid darkgrey;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#Titel {
+  margin-right: 10px;
+}
+
+.grid-Dropdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 18px;
+  margin: 20px;
+  margin-top: 0px;
+  column-gap: 10px;
+  border: 4px solid darkgrey;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.Typ {
+  font-size: small;
+  text-align: left;
+  margin-top: 1px;
+}
+
+#Status {
+  height: 30px;
+}
+
+.grid-Erst_Bearb {
+  display: grid;
+  grid-template-columns: 15% 85%;
+  grid-template-rows: 1fr;
+  margin: 20px;
+  margin-top: 0px;
+  column-gap: 10px;
+  border: 4px solid darkgrey;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.grid-Ersteller {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 45px;
+  padding: 10px;
+  border-right: 4px solid darkgrey;
+}
+
+.grid-Bearbeiter {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-template-rows: 45px;
+  align-items: left;
+  gap: 10px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.grid-DateTime {
+  display: grid;
+  grid-template-columns: 49.5% 49.5%;
+  gap: 1%;
+}
+
+#Erstellzeit {
+  text-align: center;
+}
+
+#Bearbeitungszeit {
+  text-align: center;
+}
+
+.bearbeiter-feld {
+  display: grid;
+  grid-template-columns: 100%;
+}
+
+#Ersteller {
+  height: 35px;
+}
+
+#Bearbeiter {
+  height: 35px;
+}
+
+#Bearbeiter input {
+  flex: 1;
+}
+
+#Erstelldatum {
+  height: 40px;
+}
+
+#Bearbeitungsdatum {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.grid-Beschreibung {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 200px;
+  margin: 20px;
+  margin-top: 0px;
+  column-gap: 10px;
+  border: 4px solid darkgrey;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#Dienstleistungsauswahl {
+  border-right: solid darkgrey;
+}
+
+.grid-Suche {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  border-bottom: solid darkgrey;
+  padding-bottom: 2.5px;
+}
+
+#SucheDienstleistung {
+  size: auto;
+  margin-right: 5px;
+  text-align: center;
+}
+
+#ButtonSuche {
+  size: auto;
+  margin-right: 5px;
+}
+
+#Beschreibung {
+  resize: none;
+}
+
+.grid-Dienstleistung {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 200px;
+  margin: 20px;
+  margin-top: 0px;
+  column-gap: 10px;
+  border: 4px solid darkgrey;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.grid-Itern {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 150px;
+  margin: 20px;
+  margin-top: 0px;
+  column-gap: 10px;
+  border: 4px solid darkgrey;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#Interne_Notiz {
+  resize: none;
+}
+
+#Interner_Status {
+  resize: none;
+  margin-right: 10px;
+}
+
+.Oberbegriff {
+  font-size: small;
+  text-align: left;
+  margin-top: 30px;
+  margin-left: 35px;
+  margin-bottom: 0px;
+}

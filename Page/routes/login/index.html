@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+     <title>Login HELPDESK</title>
+     <meta charset="UTF-8">
+     <script src="/helpdesk/Page/js/jquery.js"></script>
+     <link rel="stylesheet" href="./style/style.css">
+     <script src="./js/script.js"></script>
+</head>
+
+<body onload="load()">
+     <main>
+          <div class="container">
+               <h2>Login</h2>
+               <form method="POST" action="./php/login_script.php" class="form-box">
+                    <div class="input">
+                         <input class="textfield" type="text" id="email" name="email" placeholder="Email:">
+                    </div>
+
+                    <div class="input">
+                         <input class="textfield" type="password" id="passwort" name="passwort" placeholder="Passwort:">
+                    </div>
+                    <div class="action">
+                         <input type="submit" name="login" class="login" value="LOGIN" />
+                         <a href="../../index.html">
+                              <img src="../../img/back.svg" class="back" alt="Back">
+                         </a>
+                    </div>
+               </form>
+          </div>
+
+     </main>
+
+</body>
+
+</html>

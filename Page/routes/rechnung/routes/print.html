@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Druckseite</title>
+    <link rel="stylesheet" href="../style/print.css">
+</head>
+
+<body onload="loadPrintData()">
+
+    <div class="print-container">
+        <div class="print-box" id="print-box-1">
+            <p><strong>Rechnungsnummer:</strong></p>
+            <p><strong>Ticketnummer:</strong></p>
+        </div>
+        <div class="print-box" id="print-box-2">
+            <p><strong>Kunde:</strong></p>
+        </div>
+        <div class="print-box" id="print-box-3">
+            <p><strong>Titel:</strong></p>
+        </div>
+    </div>
+
+    <div class="print-container">
+        <div class="print-box" id="print-box-4">
+            <p><strong>Ticketbeschreibung:</strong></p>
+        </div>
+    </div>
+
+    <div class="print-container">
+        <div class="print-box" id="print-box-5">
+            <p><strong>Dienstleistungen:</strong></p>
+        </div>
+        <div class="print-box" id="print-box-6">
+            <p><strong>Kosten:</strong></p>
+        </div>
+    </div>
+
+    <div class="print-container">
+        <div class="print-box" id="print-box-7">
+            <p><strong>Bezahlungsart:</strong></p>
+            <p><strong>Preis:</strong></p>
+        </div>
+    </div>
+
+    <div class="print-container">
+        <div class="print-box" id="print-box-8">
+            <p><strong>Anmerkungen:</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function loadPrintData() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const rechnungsnummer = urlParams.get('rechnungsnummer');
+            const ticketnummer = urlParams.get('ticketnummer');
+            const kunde = urlParams.get('kunde');
+            const ticketbeschreibung = urlParams.get('ticketbeschreibung');
+            const tickettitel = urlParams.get('tickettitel');
+            const dienstleistungen = urlParams.get('dienstleistungen');
+            const beschreibungen = urlParams.get('beschreibungen');
+            const kosten = urlParams.get('kosten');
+            const bezahlungsart = urlParams.get('bezahlungsart');
+            const preis = urlParams.get('preis');
+            const anmerkungen = urlParams.get('anmerkungen');
+
+            document.getElementById('print-box-1').innerHTML = `<p><strong>Rechnungsnummer:</strong> ${rechnungsnummer}</p><p><strong>Ticketnummer:</strong> ${ticketnummer}</p>`;
+            document.getElementById('print-box-2').innerHTML = `<p><strong>Kunde:</strong> ${kunde}</p>`;
+            document.getElementById('print-box-3').innerHTML = `<p><strong>Titel:</strong> ${tickettitel}</p>`;
+            document.getElementById('print-box-4').innerHTML = `<p><strong>Ticketbeschreibung:</strong> ${ticketbeschreibung}</p>`;
+
+            const dienstleistungenArray = dienstleistungen.split('\n');
+            const beschreibungenArray = beschreibungen.split('\n');
+            const kostenArray = kosten.split('\n');
+
+            let dienstleistungenHTML = '';
+            for (let i = 0; i < dienstleistungenArray.length; i++) {
+                const dienstleistung = dienstleistungenArray[i].trim();
+                const beschreibung = beschreibungenArray[i] ? beschreibungenArray[i].trim() : 'Keine Beschreibung vorhanden';
+                dienstleistungenHTML += `<p>${dienstleistung} - ${beschreibung}</p>`;
+            }
+
+            document.getElementById('print-box-5').innerHTML = `<p><strong>Dienstleistungen:</strong></p>${dienstleistungenHTML}`;
+
+            let kostenHTML = '';
+            for (let i = 0; i < kostenArray.length; i++) {
+                kostenHTML += `<p>${kostenArray[i].trim()} </p>`;
+            }
+            document.getElementById('print-box-6').innerHTML = `<p><strong>Kosten:</strong></p>${kostenHTML}`;
+
+            document.getElementById('print-box-7').innerHTML = `<p><strong>Bezahlungsart:</strong> ${bezahlungsart}</p><p><strong>Preis:</strong> ${preis} </p>`;
+
+            document.getElementById('print-box-8').innerHTML = `<p><strong>Anmerkungen:</strong> ${anmerkungen || 'Keine Anmerkungen vorhanden.'}</p>`;
+        }
+    </script>
+
+</body>
+
+</html>

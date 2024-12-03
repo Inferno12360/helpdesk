@@ -1,0 +1,63 @@
+
+.search_container {
+  margin-top: 1rem;
+  width: 75%;
+}
+
+.search_bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input_field {
+  width: 90%;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+  padding: 0.5rem;
+  color: black;
+}
+
+.reset_button {
+  width: 10%;
+}
+
+.kunden_list {
+  margin-top: 0.5rem;
+}
+
+.kunde_item {
+  display: flex;
+  width: auto;
+  flex-direction: row;
+  gap: 1rem;
+  overflow: hidden;
+  padding: 1rem 0.5rem 1rem 0.5rem;
+  border-bottom: 2px solid #4b5563;
+  background-color: #334155;
+}
+
+.kunde_item:first-child {
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-top: none;
+}
+
+.kunde_item:last-child {
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+  border-bottom: none;
+}
+
+.kunde_id {
+  width: 4rem;
+  padding-left: 1rem;
+  overflow: hidden;
+}
+
+.kunde_name {
+  width: 8rem;
+}
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Status</title>
+  <script src="/helpdesk/Page/js/jquery.js"></script>
+  <script src="../js/helper.js"></script>
+  <script src="../js/status.js"></script>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body onload="load()" id="body">
+  <main class="container">
+    <div class="card">
+      <div class="row">
+        <label for="Statusname">Statusname</label>
+        <input type="text" id="Statusname">
+        <label for="Farbe">Farbe</label>
+        <input type="text" id="Farbe">
+        <label for="Beschreibung">Beschreibung</label>
+        <input type="text" id="Beschreibung">
+        <button type="submit" onclick="submitStatus()">Neuen Status hinzufügen</button>
+      </div>
+    </div>
+    <div class="data_container" id="StatusContainer">
+
+    </div>
+  </main>
+</body>
+
+</html>

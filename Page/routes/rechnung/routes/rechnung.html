@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/rechnung.css">
+    <script src="../js/jspdf.js"></script>
+    <script src="../js/jspdf-autotable.js"></script>
+    <script src="/helpdesk/Page/js/jquery.js"></script>
+    <script src="../js/rechnung.js"></script>
+
+
+    <title>Rechnung</title>
+</head>
+
+<script>
+    async function GetPrimaryKey() {
+        const params = new URLSearchParams(window.location.search);
+        const PK = await params.get('pk');
+        const data = SetParametersOfRechnung(PK);
+    }
+</script>
+
+<body onload="GetPrimaryKey()">
+
+    <div class="Placeholder">
+
+        <div class="Placeholder-Row">
+            <div class="Placeholder-Item item-1">
+                <div class="input-group">
+                    <label for="rechnungsnummer">Rechnungsnummer:</label>
+                    <input disabled id="rechnungsnummer" type="text" class="shared-style small"
+                        placeholder="Rechnungsnummer">
+                </div>
+                <div class="input-group group-ticketnummer">
+                    <label for="ticketnummer">Ticketnummer:</label>
+                    <input disabled id="ticketnummer" type="text" class="shared-style small" placeholder="Ticketnummer">
+                </div>
+            </div>
+
+            <div class="Placeholder-Item item-2">
+                <div class="input-group">
+                    <label for="mitarbeiter">Mitarbeiter:</label>
+                    <input disabled id="mitarbeiter" type="text" class="shared-style small" placeholder="Mitarbeiter">
+                </div>
+                <div class="input-group group-kunde">
+                    <label for="kunde">Kunde:</label>
+                    <input disabled id="kunde" type="text" class="shared-style small" placeholder="Kunde">
+                </div>
+            </div>
+
+            <div class="Placeholder-Item item-8">
+                <div class="input-group">
+                    <label for="ticketbeschreibung">Ticketbeschreibung:</label>
+                    <input disabled id="ticketbeschreibung" type="text" class="shared-style small"
+                        placeholder="Tickettitel">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="Grid">
+            <div class="Grid-Item item-3 flex-container">
+                <textarea disabled class="shared-style dienstleistungen" placeholder="Dienstleistungs Nr."></textarea>
+                <textarea disabled class="shared-style beschreibung"
+                    placeholder="Beschreibung der Dienstleistung"></textarea>
+            </div>
+
+            <div class="Grid-Item item-4 flex-container">
+                <textarea disabled class="shared-style kosten"
+                    placeholder="Kosten der jeweiligen Dienstleistung"></textarea>
+            </div>
+
+            <div class="Grid-Item item-5">
+                <input disabled type="text" class="shared-style" placeholder="Ticket Beschreibung">
+                <textarea type="text" class="shared-style" placeholder="Anmerkungen" id="notes"></textarea>
+            </div>
+
+            <div class="Grid-Item item-6">
+                <input type="button" class="shared-style btn" value="Save as PDF">
+                <input type="button" class="shared-style btn" value="Print" onclick="printWithLayout()">
+                <input type="button" class="shared-style btn" value="Send to E-Mail">
+            </div>
+
+            <div class="Grid-Item item-7">
+                <input disabled type="text" class="shared-style preis" placeholder="Preis">
+                <input disabled type="text" class="shared-style bezahlungsart" placeholder="Bezahlungsart">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

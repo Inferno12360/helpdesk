@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="../style/ticket.css">
+  <title>Ticket</title>
+  <script src="/helpdesk/Page/js/jquery.js"></script>
+  <script src="../js/ticket.js"></script>
+  <script src="/helpdesk/Page/js/script.js"></script>
+  <link rel="stylesheet" href="/helpdesk/Page/style/footer.css">
+</head>
+
+<body onload="Ticket()">
+  <script>
+
+    async function Ticket() {
+      const params = new URLSearchParams(window.location.search);
+      const PK = params.get('pk');
+      console.log(PK);
+
+      AuswahlFuellen(PK);
+
+    }
+  </script>
+<header id="Navigation">
+
+</header>
+
+  <div class="Ticket">
+
+    <div class="grid-Kunde">
+      <select name="Kunde" id="Kunde"></select>
+    </div>
+
+
+    <p class="Oberbegriff">Hauptinfos:</p>
+    <div class="grid-Titel">
+      <input type="text" id="TicketNr" placeholder="TicketNr" readonly>
+      <input type="text" id="Titel" placeholder="Titel">
+    </div>
+
+
+    <p class="Oberbegriff">Typen des Tickets:</p>
+    <div class="grid-Dropdown">
+      <p class="Typ">Status:</p>
+      <p class="Typ">Priorität:</p>
+      <p class="Typ">Art:</p>
+
+      <select name="Status" id="Status"></select>
+      <select name="Priorität" id="Priorität"></select>
+      <select name="Art" id="Art"></select>
+
+    </div>
+
+
+    <p class="Oberbegriff">Bearbeiter:</p>
+    <div class="grid-Erst_Bearb">
+
+      <div class="grid-Ersteller">
+        <select name="Ersteller" id="Ersteller"></select>
+
+        <div class="grid-DateTime">
+          <input type="date" id="Erstelldatum" placeholder="Erstelldatum">
+          <input type="time" id="Erstellzeit" placeholder="Erstellzeit">
+        </div>
+      </div>
+
+      <div class="grid-Bearbeiter" id="bearbeiter-container">
+        <button id="add-bearbeiter" onclick="addBearbeiter()">+</button>
+      </div>
+    </div>
+    <script src="../js/ticket_bearbeiter.js"></script>
+
+
+
+
+    <p class="Oberbegriff">Beschreibung:</p>
+    <div class="grid-Beschreibung">
+      <textarea id="Beschreibung" name="Beschreibung" placeholder="Beschreibung"></textarea>
+    </div>
+
+    <p class="Oberbegriff">Dienstleistungen:</p>
+    <div class="grid-Dienstleistung">
+      <div id="Dienstleistungsauswahl">
+        <div class="grid-Suche">
+          <input type="text" id="SucheDienstleistung" placeholder="Suche nach Dienstleistung" oninput="filterDienstleistungen()">
+          <!-- <input type="button" id="ButtonSuche" value="Suche starten"> -->
+        </div>
+        <div id="AuswählbareDienstleistungen" style="height: 180px; overflow-y: auto;">
+          <!-- Template 
+            <div>
+              <input type="text" id="DienstID" value="DienstID">
+              <input type="text" id="DienstBeschreibung" value="Reperatur">
+              <button>-></button>
+            </div> -->
+
+        </div>
+      </div>
+      <div id="AusgewählteDienstleistungen" style="height: 208px; overflow-y: auto;">
+        <!-- Template 
+          <div>
+            <input type="text" id="DienstID" value="001"> <style>#DienstID{width: 40px;}</style>
+            <input type="text" id="DienstBeschreibung" value="Reperatur">
+            <input type="text" id="DienstPreis" value="40,25€">
+            <button>x</button>
+          </div>-->
+      </div>
+    </div>
+
+
+    <p class="Oberbegriff">Intern:</p>
+    <div class="grid-Itern">
+      <textarea id="Interne_Notiz" name="Interne_Notiz" placeholder="Interne_Notiz"></textarea>
+      <textarea id="Interner_Status" name="Interner_Status" placeholder="Interner_Status"></textarea>
+    </div>
+
+
+    <button id="Button" onclick="SetTicket()">Ticket erstellen</button>
+    <style>
+      #Button {
+        width: 300px;
+        height: 75px;
+      }
+    </style>
+
+  </div>
+</body>
+
+</html>
