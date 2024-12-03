@@ -148,7 +148,6 @@ async function updateKunde(key) {
         submitButton.textContent = "Neue Kunde hinzufügen"
         showPopup("Successfully updated Kunde", "success");
     } catch (error) {
-        console.log(error);
 
         showPopup("An Error occurred: " + error["responseJSON"]["msg"], "error");
     }

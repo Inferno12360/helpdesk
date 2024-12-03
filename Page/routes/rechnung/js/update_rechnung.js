@@ -32,7 +32,6 @@ async function updateRechnung(PK_Rechnung) {
         const response = await $.post("/helpdesk/Page/routes/api/update/rechnung/main.php", payload);
 
         if (response.status === "success") {
-            console.log(response);
             alert("Rechnung erfolgreich aktualisiert!");
         } else {
             alert("Fehler beim Aktualisieren der Rechnung.");
@@ -46,10 +45,8 @@ async function updateRechnung(PK_Rechnung) {
 
 async function PrepareRechnung(PKRNR) {
     try {
-        console.log(PKRNR);
 
         const data = await postAsync("/helpdesk/Page/routes/api/api.php", { "method": "getrechnungbykey", "key": PKRNR });
-        console.log("API-Daten:", data);
 
         if (!data || data.length === 0) {
             alert("Keine Daten gefunden!");
@@ -58,7 +55,6 @@ async function PrepareRechnung(PKRNR) {
 
         const bezahlungsartenData = await postAsync("/helpdesk/Page/routes/api/api.php", { "method": "getbezahlungsartall" });
         const bezahlungsarten = bezahlungsartenData;
-        console.log(bezahlungsartenData);
 
         const bezahlungsartSelect = document.querySelector('#bezahlungsart');
         bezahlungsarten.forEach(bezahlungsart => {
@@ -115,10 +111,8 @@ async function PrepareRechnung(PKRNR) {
 async function SetParametersOfRechnung(PK) {
     try {
         const response = await $.post("/helpdesk/Page/routes/api/api.php", { "method": "getrechnungbykey", "key": PK });
-        console.log("API Antwort:", response);
 
         if (response.status == "success") {
-            console.log("Rechnung gefunden:", response.data);
             await PrepareRechnung(response.data.Rechnungsnr);
         } else {
             console.error("Keine Rechnung gefunden oder ungültige Antwort:", response);

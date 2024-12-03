@@ -53,8 +53,9 @@ try {
     $stmt->bindValue(":" . $param, $arr["value"]);
   }
   $stmt->execute();
+  $id = $conn->lastInsertId();
   $conn->commit();
-  return sendSuccesful('default', data: $conn->lastInsertId());
+  return sendSuccesful('default', data: $id);
 } catch (PDOException $e) {
   $conn->rollBack();
   throwError('dberror', data: $e->getMessage());

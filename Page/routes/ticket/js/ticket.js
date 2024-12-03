@@ -245,7 +245,6 @@ async function SetTicket() {
 
         })
 
-        console.log('Der Button Text ist "Ticket erstellen"');
     }
     else if (button.innerText === 'Ticket updaten') {
 
@@ -270,7 +269,6 @@ async function SetTicket() {
 
         })
 
-        console.log('Der Button Text ist "Ticket updaten"');
     }
 }
 

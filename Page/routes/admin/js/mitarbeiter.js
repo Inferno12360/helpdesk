@@ -199,7 +199,6 @@ async function editMitarbeiter(key) {
     }
     showPopup("Successfully loaded Mitarbeiter", "success");
   } catch (error) {
-    console.log(error);
 
     showPopup("An Error occurred: " + error["responseJSON"]["msg"], "error");
   }
@@ -228,9 +227,7 @@ async function updateMitarbeiter(key) {
   let selectedId = -1;
   if (selectedCheckboxes.length > 0) {
     selectedId = selectedCheckboxes[0].id;
-    console.log("Selected checkbox ID:", selectedId);
   } else {
-    console.log("No checkboxes selected.");
   }
 
   const submitButton = vorname.parentElement.parentElement.getElementsByTagName("button")[0];
@@ -270,7 +267,6 @@ async function updateMitarbeiter(key) {
 
     showPopup("Successfully updated Mitarbeiter", "success");
   } catch (error) {
-    console.log(error);
 
     showPopup("An Error occurred: " + error["responseJSON"]["msg"], "error");
   }

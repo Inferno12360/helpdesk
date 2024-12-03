@@ -28,7 +28,6 @@ document.getElementById('add-bearbeiter').addEventListener('click', async functi
     }
     let data = await postAsync("/helpdesk/Page/routes/api/api.php", { "method": "getmitarbeiterall" })
 
-    console.log(data);
     let output = document.getElementById('Bearbeiter');
     let BearbeiterDropInfos = "";
 

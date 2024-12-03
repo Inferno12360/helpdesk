@@ -8,7 +8,6 @@ async function loadData() {
 
   const response = await $.post("/helpdesk/API/api.php", {"method": "getmitarbeiterall"});
   response.forEach(element => {
-    console.log("Elemet", element);
     const div = document.createElement("div");
 
     const p1 = document.createElement("p");

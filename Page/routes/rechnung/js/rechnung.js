@@ -191,14 +191,14 @@ async function SetParametersOfRechnung(PK) {
     let PK_Rechnung = -1;
 
     const checkForExsistingRechnung = await postAsync("/helpdesk/Page/routes/api/api.php", { "method": "getrechnungbytkey", "key": PK });
+
+
     if (checkForExsistingRechnung.length != 0) {
-        console.log("test:", checkForExsistingRechnung);
         await PrepareRechnung(checkForExsistingRechnung.Rechnungsnr);
         return;
     }
     const ticketData = await postAsync("/helpdesk/Page/routes/api/api.php", { "method": "getticketbykey", "key": PK });
 
-    console.log(ticketData);
 
     const Ticketbeschreibung = ticketData["Beschreibung"];
     const Abrechnung = "Rechnung für Ticket " + PK;
@@ -217,8 +217,7 @@ async function SetParametersOfRechnung(PK) {
         "FK_Ticket": FK_Ticket
     });
 
-    console.log(rechnungData['Rechnungsnr']);
-    PK_Rechnung = rechnungData["Rechnungsnr"];
+    PK_Rechnung = rechnungData;
 
     if (PK_Rechnung === -1) {
         console.error("PK HASN'T CHANGED");
@@ -231,10 +230,10 @@ async function SetParametersOfRechnung(PK) {
 
 async function PrepareRechnung(PKRNR) {
 
-    console.log(PKRNR);
+
     const data = await postAsync("/helpdesk/Page/routes/api/api.php", { "method": "getrechnungbykey", "key": PKRNR });
 
-    console.log(data);
+
     const Ticketnummer = data["Ticket_Values"]["PK_Ticket"];
     const Rechnungsnummer = data["Rechnungsnr"];
     const Mitarbeiter_Vorname = data["Ticket_Values"]["Mitarbeiter_Values"]["Vorname"];
@@ -250,17 +249,22 @@ async function PrepareRechnung(PKRNR) {
     const Kosten = [];
     let gesamtKosten = 0;
 
-    data["Ticket_Values"]["Dienstleistung_Values"].forEach(dienstleistung => {
-        dienstleistung = dienstleistung[0];
+    if (data["Ticket_Values"]["Dienstleistung_Values"] != undefined) {
+        data["Ticket_Values"]["Dienstleistung_Values"].forEach(dienstleistung => {
 
-        Dienstleistungen.push(dienstleistung["PK_Dienstleistung"]);
-        Dienstleistungen_Beschreibung.push(dienstleistung["Beschreibung"]);
+            if (dienstleistung[0] != undefined) {
+                dienstleistung = dienstleistung[0];
+            }
 
-        const kostenWert = parseFloat(dienstleistung["Kosten"]);
-        Kosten.push(`${kostenWert} €`);
+            Dienstleistungen.push(dienstleistung["PK_Dienstleistung"]);
+            Dienstleistungen_Beschreibung.push(dienstleistung["Beschreibung"]);
 
-        gesamtKosten += kostenWert;
-    });
+            const kostenWert = parseFloat(dienstleistung["Kosten"]);
+            Kosten.push(`${kostenWert} €`);
+
+            gesamtKosten += kostenWert;
+        });
+    }
 
     const Preis = `${gesamtKosten.toFixed(2)} €`;
 
@@ -281,7 +285,7 @@ async function PrepareRechnung(PKRNR) {
 async function sendEmail() {
     const data = await postAsync("/helpdesk/Page/routes/api/api.php", { "method": "getrechnungbykey", "key": PKRNR });
 
-    console.log(data);
+
 
     const fileName = `Rechnung_${new Date().toLocaleDateString('de-DE').replace(/\./g, '-')}.pdf`;
     const formData = new FormData();
@@ -289,7 +293,7 @@ async function sendEmail() {
     formData.append('email', data[0]["Kunden_Values"][0]["Email"]);
     formData.append('subject', `Rechnung: ${fileName}`);
 
-    console.log('email');
+
 
     fetch('send_email.php', {
         method: 'POST',

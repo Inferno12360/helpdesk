@@ -17,11 +17,9 @@ async function loadData() {
 
 
   const response = await postAsync("/helpdesk/Page/routes/api/api.php", { "method": "getrechnungall" });
-  console.log(response);
   response.forEach(element => {
     const div = document.createElement("div");
     div.classList.add('rechnung-item');
-    console.log(element.Rechnungsnr);
 
     const p1 = document.createElement("p");
     p1.textContent = element.Abrechnung;
@@ -61,7 +59,6 @@ async function loadData() {
 }
 
 async function DeleteRechnung(elementId) {
-  console.log("Zu löschendes Element:", elementId);
 
   const confirmDelete = confirm("Möchten Sie diese Rechnung wirklich löschen?");
 
@@ -73,11 +70,8 @@ async function DeleteRechnung(elementId) {
       });
       const jsonResponse = typeof response === "string" ? JSON.parse(response) : response;
 
-      console.log("Antwort erhalten:", jsonResponse);
 
-      console.log(response);
 
-      console.log("Rechnung gelöscht:", jsonResponse.msg);
 
       const div = document.querySelector(`.rechnung-item[data-id='${elementId}']`);
       if (div) {
@@ -91,7 +85,6 @@ async function DeleteRechnung(elementId) {
       location.reload();
     }
   } else {
-    console.log("Löschen abgebrochen");
   }
 }
 

@@ -127,14 +127,12 @@ async function DeleteTicket(PK_Ticket) {
       if (!response.ok) {
         throw new Error("Fehler beim Löschen des Tickets. Status: " + response.status);
       }
-      console.log("Löschvorgang erfolgreich!");
       location.reload();
 
     } catch (error) {
       console.error("Fehler beim Löschen des Tickets:", error);
     }
   } else {
-    console.log("Löschvorgang abgebrochen.");
   }
 }
 

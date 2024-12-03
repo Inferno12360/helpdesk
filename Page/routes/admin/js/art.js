@@ -52,7 +52,6 @@ async function loadData() {
       artDataContainer.appendChild(artItem);
     });
   } catch (error) {
-    console.log(error);
 
     showPopup("An Error occurred: " + error["responseJSON"]["msg"], "error");
   }
