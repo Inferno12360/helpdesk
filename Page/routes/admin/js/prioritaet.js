@@ -25,7 +25,7 @@ async function loadData() {
       deleteImage.src = "../img/X.png"
       deleteImage.alt = "delete";
       deleteButton.appendChild(deleteImage);
-      deleteButton.classList.add("data_delete");
+      deleteButton.classList.add("data_button");
 
       deleteButton.addEventListener("click", () => {
         deletePrioritaet(prioritaet.PK_Priorität);
@@ -36,7 +36,7 @@ async function loadData() {
       editImage.src = "../img/Bearbeiten.png";
       editImage.alt = "edit";
       editButton.appendChild(editImage);
-      editButton.classList("data_button");
+      editButton.classList.add("data_button");
       editButton.addEventListener("click", () => {
         editPrioritaet(prioritaet.PK_Priorität);
       })
@@ -71,7 +71,7 @@ async function editPrioritaet(key) {
 
     prioritaetsname.value = editResponse.Prioritätsname;
     beschreibung.value = editResponse.Beschreibung;
-    submitButton.textContent = "Prioritaet aktualisieren"
+    submitButton.textContent = "Priorität aktualisieren"
     submitButton.onclick = () => {
       updatePrioritaet(editResponse.PK_Priorität);
     }
@@ -83,28 +83,30 @@ async function editPrioritaet(key) {
 
 async function updatePrioritaet(key) {
   const prioritaetsname = document.getElementById("Priotitaetsname");
-  const beschreibung = document.getElementById("Beschreibung").value;
+  const beschreibung = document.getElementById("Beschreibung");
   const submitButton = prioritaetsname.parentElement.getElementsByTagName("button")[0];
 
   try {
     const updateResponse = await postAsync('/helpdesk/Page/routes/api/api.php',
       {
         method: "updateprioritaetmain",
-        Prioritätsname: prioritaetsname.value,
-        Beschreibung: beschreibung,
-        PK_Priorität: key,
+        Prioritaetsname: prioritaetsname.value,
+        Beschreibung: beschreibung.value,
+        PK_Prioritaet: key,
       }
     )
 
-    submitButton.textContent = "Neue Prioritaet hinzufügen"
+    submitButton.textContent = "Neue Priorität hinzufügen"
     submitButton.onclick = () => {
       submitPrioritaet();
     }
-    kosten.value = "";
+    prioritaetsname.value = "";
     beschreibung.value = "";
 
     showPopup("Successfully updated Prioritaet", "success");
   } catch (error) {
+    console.log(error);
+
     showPopup("An Error occurred: " + error["responseJSON"]["msg"], "error");
   }
 

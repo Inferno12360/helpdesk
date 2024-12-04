@@ -31,7 +31,7 @@ async function loadData() {
       deleteImage.src = "../img/X.png"
       deleteImage.alt = "delete";
       deleteButton.appendChild(deleteImage);
-      deleteButton.classList.add("data_delete");
+      deleteButton.classList.add("data_button");
 
       deleteButton.addEventListener("click", () => {
         deleteRechtegruppe(rechtegruppe.PK_Rechtegruppe);
@@ -42,7 +42,7 @@ async function loadData() {
       editImage.src = "../img/Bearbeiten.png";
       editImage.alt = "edit";
       editButton.appendChild(editImage);
-      editButton.classList("data_button");
+      editButton.classList.add("data_button");
       editButton.addEventListener("click", () => {
         editRechtegruppe(rechtegruppe.PK_Rechtegruppe);
       })
@@ -77,11 +77,12 @@ async function editRechtegruppe(key) {
       }
     )
 
-    kosten.value = editResponse.Kosten
-    beschreibung.value = editResponse.Beschreibung;
+    bestelllimit.value = editResponse.Bestelllimit;
+    admin.checked = editResponse.Administrationsrechte == 0 ? false : true;
+    helpdesk.checked = editResponse.Helpdesk_Fernwartung == 0 ? false : true;
     submitButton.textContent = "Rechtegruppe aktualisieren"
     submitButton.onclick = () => {
-      updateRechtegruppe(editResponse.PK_Dienstleistung);
+      updateRechtegruppe(editResponse.PK_Rechtegruppe);
     }
     showPopup("Successfully loaded Rechtegruppe", "success");
   } catch (error) {
@@ -91,17 +92,20 @@ async function editRechtegruppe(key) {
 
 async function updateRechtegruppe(key) {
   const bestelllimit = document.getElementById("Bestelllimit");
-  const admin = document.getElementById("Administrationsrechte").checked ? 1 : 0;
-  const helpdesk = document.getElementById("Helpdesk_Fernwartung").checked ? 1 : 0;
+  const admin = document.getElementById("Administrationsrechte");
+  const adminValue = admin.checked;
+  const helpdesk = document.getElementById("Helpdesk_Fernwartung");
+  const helpdeskValue = helpdesk.checked;
   const submitButton = bestelllimit.parentElement.getElementsByTagName("button")[0];
+  console.log("key", key);
 
   try {
     const updateResponse = await postAsync('/helpdesk/Page/routes/api/api.php',
       {
         method: "updaterechtegruppemain",
-        Administrationsrechte: admin,
+        Administrationsrechte: adminValue,
         Bestelllimit: bestelllimit.value,
-        Helpdesk_Fernwartung: helpdesk,
+        Helpdesk_Fernwartung: helpdeskValue,
         PK_Rechtegruppe: key,
       }
     )
@@ -110,8 +114,9 @@ async function updateRechtegruppe(key) {
     submitButton.onclick = () => {
       submitRechtegruppe();
     }
-    kosten.value = "";
-    beschreibung.value = "";
+    admin.checked = null;
+    helpdesk.checked = null;
+    bestelllimit.value = null;
 
     showPopup("Successfully updated Rechtegruppe", "success");
   } catch (error) {
@@ -145,8 +150,8 @@ async function deleteRechtegruppe(key) {
 
 async function submitRechtegruppe() {
   const bestelllimit = document.getElementById("Bestelllimit").value;
-  const admin = document.getElementById("Administrationsrechte").checked ? 1 : 0;
-  const helpdesk = document.getElementById("Helpdesk_Fernwartung").checked ? 1 : 0;
+  const admin = document.getElementById("Administrationsrechte").checked;
+  const helpdesk = document.getElementById("Helpdesk_Fernwartung").checked;
 
   try {
     const setResponse = await postAsync('/helpdesk/Page/routes/api/api.php',

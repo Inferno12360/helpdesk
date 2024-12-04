@@ -27,7 +27,7 @@ async function loadData() {
       deleteImage.src = "../img/X.png"
       deleteImage.alt = "delete";
       deleteButton.appendChild(deleteImage);
-      deleteButton.classList.add("data_delete");
+      deleteButton.classList.add("data_button");
 
       deleteButton.addEventListener("click", () => {
         deleteStatus(status.PK_Status);
@@ -38,7 +38,7 @@ async function loadData() {
       editImage.src = "../img/Bearbeiten.png";
       editImage.alt = "edit";
       editButton.appendChild(editImage);
-      editButton.classList("data_button");
+      editButton.classList.add("data_button");
       editButton.addEventListener("click", () => {
         editStatus(status.PK_Status);
       })
@@ -87,23 +87,25 @@ async function editStatus(key) {
 }
 
 async function updateStatus(key) {
-  const kosten = document.getElementById("Kosten");
+  const statusname = document.getElementById("Statusname");
+  const farbe = document.getElementById("Farbe");
   const beschreibung = document.getElementById("Beschreibung");
-  const submitButton = kosten.parentElement.getElementsByTagName("button")[0];
+  const submitButton = statusname.parentElement.getElementsByTagName("button")[0];
 
   try {
     const updateResponse = await postAsync('/helpdesk/Page/routes/api/api.php',
       {
         method: "updatestatusmain",
-        Kosten: kosten.value,
+        PK_Status: key,
+        Statusname: statusname.value,
+        Farbe: farbe.value,
         Beschreibung: beschreibung.value,
-        PK_Dienstleistung: key,
       }
     )
 
     submitButton.textContent = "Neue Status hinzufügen"
     submitButton.onclick = () => {
-      submitBezahlungsart();
+      submitStatus();
     }
     statusname.value = "";
     farbe.value = "";

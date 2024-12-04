@@ -29,7 +29,7 @@ async function loadData() {
       deleteImage.src = "../img/X.png"
       deleteImage.alt = "delete";
       deleteButton.appendChild(deleteImage);
-      deleteButton.classList.add("data_delete");
+      deleteButton.classList.add("data_button");
 
       deleteButton.addEventListener("click", () => {
         deleteOrt(ort.PK_Ort);
@@ -40,7 +40,7 @@ async function loadData() {
       editImage.src = "../img/Bearbeiten.png";
       editImage.alt = "edit";
       editButton.appendChild(editImage);
-      editButton.classList("data_button");
+      editButton.classList.add("data_button");
       editButton.addEventListener("click", () => {
         editOrt(ort.PK_Ort);
       })
@@ -66,7 +66,8 @@ async function editOrt(key) {
   const plz = document.getElementById("PLZ");
   const street = document.getElementById("Street");
   const hausnummer = document.getElementById("Hausnummer");
-  const submitButton = stadt.parentElement.getElementsByTagName("button")[0];
+  const submitButton = stadt.parentElement.parentElement.getElementsByTagName("button")[0];
+
 
   try {
     /** @type {Ort}*/
@@ -93,20 +94,20 @@ async function editOrt(key) {
 
 async function updateOrt(key) {
   const stadt = document.getElementById("Stadt");
-  const plz = document.getElementById("PLZ").value;
-  const street = document.getElementById("Street").value;
-  const hausnummer = document.getElementById("Hausnummer").value;
-  const submitButton = stadt.parentElement.getElementsByTagName("button")[0];
+  const plz = document.getElementById("PLZ");
+  const street = document.getElementById("Street");
+  const hausnummer = document.getElementById("Hausnummer");
+  const submitButton = stadt.parentElement.parentElement.getElementsByTagName("button")[0];
 
   try {
     const updateResponse = await postAsync('/helpdesk/Page/routes/api/api.php',
       {
         method: "updateortmain",
         Stadt: stadt.value,
-        PLZ: plz,
-        Straße: street,
-        Hausnummer: hausnummer,
-        PK_Dienstleistung: key,
+        PLZ: plz.value,
+        Strasse: street.value,
+        Hausnummer: hausnummer.value,
+        PK_Ort: key,
       }
     )
 
@@ -121,6 +122,8 @@ async function updateOrt(key) {
 
     showPopup("Successfully updated Ort", "success");
   } catch (error) {
+    console.log(error);
+
     showPopup("An Error occurred: " + error["responseJSON"]["msg"], "error");
   }
 

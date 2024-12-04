@@ -18,7 +18,15 @@ $params = array(
 );
 
 foreach ($params as $param => $arr) {
-  if (!isset($_REQUEST[$param]) || empty($_REQUEST[$param])) {
+  if ($param == "Administrationsrechte") {
+    $_REQUEST[$param] = $_REQUEST[$param] == "false" ? 0 : 1;
+  }
+
+  if ($param == "Helpdesk_Fernwartung") {
+    $_REQUEST[$param] = $_REQUEST[$param] == "false" ? 0 : 1;
+  }
+
+  if ((!isset($_REQUEST[$param]) || empty($_REQUEST[$param])) && $param == "Bestelllimit") {
     throwError('bad_param', "", "Field {$param} is not set");
   } else {
     try {

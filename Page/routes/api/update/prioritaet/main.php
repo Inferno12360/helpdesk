@@ -3,7 +3,7 @@ include_once __DIR__ . '/../../conn.php';
 include_once __DIR__ . '/../../helper.php';
 
 $params = array(
-  "Prioritätsname" => [
+  "Prioritaetsname" => [
     "value" => null,
     "type" => "string",
   ],
@@ -11,7 +11,7 @@ $params = array(
     "value" => null,
     "type" => "string",
   ],
-  "PK_Priorität" => [
+  "PK_Prioritaet" => [
     "value" => null,
     "type" => "integer",
   ],
@@ -33,9 +33,9 @@ try {
   $conn->beginTransaction();
   $stmt = $conn->prepare("
     UPDATE `priorität`
-    SET `Prioritätsname` = :Prioritätsname, 
+    SET `Prioritätsname` = :Prioritaetsname, 
         `Beschreibung` = :Beschreibung
-    WHERE `PK_Priorität` = :PK_Priorität
+    WHERE `PK_Priorität` = :PK_Prioritaet
   ");
   foreach ($params as $param => $arr) {
     if (gettype($arr['value']) != $arr["type"]) {

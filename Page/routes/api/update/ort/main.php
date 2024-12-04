@@ -11,7 +11,7 @@ $params = array(
     "value" => null,
     "type" => "string",
   ],
-  "Straße" => [
+  "Strasse" => [
     "value" => null,
     "type" => "string",
   ],
@@ -43,7 +43,7 @@ try {
     UPDATE `ort`
     SET `Stadt` = :Stadt, 
         `PLZ` = :PLZ, 
-        `Straße` = :Straße, 
+        `Straße` = :Strasse, 
         `Hausnummer` = :Hausnummer
     WHERE `PK_Ort` = :PK_Ort
   ");
